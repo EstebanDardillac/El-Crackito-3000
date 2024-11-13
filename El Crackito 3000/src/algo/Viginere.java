@@ -1,7 +1,52 @@
+package algo;
+
 import java.text.Normalizer;
 import java.util.Scanner;
 
+import static utils.AnsiCouleurs.*;
+
 public class Viginere {
+
+    public static void rotationMenu() throws Exception {
+
+        // Affichage du menu
+        Scanner scanner = new Scanner(System.in);
+        System.out.println(ORANGE + "VIGENERE");
+        System.out.println(JAUNE + "╔═════════════════════════════════╗");
+        System.out.println(JAUNE + "║" +ORANGE + "VIGENERE"+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                 ║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + ROUGE + "Retour au menu principal     " + JAUNE + "║");
+        System.out.println(JAUNE + "╚═════════════════════════════════╝");
+        System.out.print(BLEU + "Choisissez une option : ");
+
+        // Récupération du choix de l'utilisateur
+        if(scanner.hasNextInt()) {
+            int choix = scanner.nextInt();
+            switch (choix) {
+                case 1:
+                    System.out.println("Vous avez choisi de chiffrer un texte");
+                    ChiffrerVigenere(); // Envoie true pour chiffrer le texte
+                    break;
+                case 2:
+                    System.out.println("Vous avez choisi de déchiffrer un texte");
+                    DechiffrerVigenere(); // Envoie false pour déchiffrer le texte
+                    break;
+                case 3:
+                    System.out.println("Vous avez choisi de retourner au menu principal");
+                    break;
+                default:
+                    System.out.println("Vous n'avez pas choisi une option valide");
+                    break;
+            }
+        } else {
+            System.out.println("Vous n'avez pas choisi une option valide");
+        }
+
+
+    }
+
 
     // Méthode de normalisation du texte pour retirer tous les caractères spéciaux, chiffres et accents
     public static String normalizeText(String text) {
@@ -14,7 +59,7 @@ public class Viginere {
     }
 
     // Méthode principale pour chiffrer et déchiffrer le texte avec la méthode de Vigenère
-    public static void viginere() throws Exception {
+    public static void ChiffrerVigenere() throws Exception {
         String texteAChiffrer; // Texte à chiffrer
         String cle; // Clé de chiffrement
         Scanner saisieUtilisateurCle = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
@@ -25,10 +70,9 @@ public class Viginere {
         texteAChiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
 
         // Vérifie si le texte contient des sauts de ligne, et redemande une entrée correcte si c'est le cas
-        while (texteAChiffrer.contains("\n") || texteAChiffrer.isEmpty()) {
+        while (texteAChiffrer.contains("\n") || texteAChiffrer.isEmpty())  {
             System.out.println("\nCe mode de chiffrement ne prend pas en compte les sauts de lignes.");
-            System.out.println("Veuillez entrer un texte sans saut de ligne :");
-            texteAChiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
+            rotationMenu();
         }
 
         // Normalise le texte pour le préparer au chiffrement (sans accents ni caractères spéciaux)
@@ -44,10 +88,9 @@ public class Viginere {
 
         // Variables pour le texte chiffré et déchiffré
         String texteADechiffrer = ""; // Contiendra le texte chiffré
-        String texteDechiffre = "";   // Contiendra le texte déchiffré
 
         // Variables pour les lettres spécifiques lors du chiffrement et déchiffrement
-        char lettreAChiffrer, lettreCle, lettreChiffree, lettreDechiffree;
+        char lettreAChiffrer, lettreCle, lettreChiffree;
         int size = texteAChiffrer.length(); // Longueur du texte à chiffrer
         int i;
 
@@ -69,6 +112,43 @@ public class Viginere {
         }
         // Affiche le texte chiffré
         System.out.println("Texte chiffré : " + texteADechiffrer);
+        rotationMenu();
+    }
+
+    public static void DechiffrerVigenere() throws Exception {
+        String texteADechiffrer; // Texte à chiffrer
+        String cle; // Clé de chiffrement
+        Scanner saisieUtilisateurCle = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
+        Scanner saisieUtilisateurTexteAChiffrer = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
+
+        // Demande à l'utilisateur de saisir le texte à chiffrer
+        System.out.println("Veuillez saisir le texte à déchiffrer :");
+        texteADechiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
+
+        // Vérifie si le texte contient des sauts de ligne, et redemande une entrée correcte si c'est le cas
+        while (texteADechiffrer.contains("\n") || texteADechiffrer.isEmpty())  {
+            System.out.println("\nCe mode de chiffrement ne prend pas en compte les sauts de lignes.");
+            rotationMenu();
+        }
+
+        // Normalise le texte pour le préparer au chiffrement (sans accents ni caractères spéciaux)
+        texteADechiffrer = normalizeText(texteADechiffrer);
+        System.out.println("Texte après normalisation : " + texteADechiffrer);
+
+        // Demande à l'utilisateur de saisir la clé de chiffrement
+        System.out.println("Veuillez saisir la clé :");
+        cle = saisieUtilisateurCle.next();
+        // Normalise la clé pour s'assurer qu'elle ne contient que des lettres minuscules
+        cle = normalizeText(cle);
+        System.out.println("Clé après normalisation : " + cle);
+
+        // Variables pour le texte chiffré et déchiffré
+        String texteDechiffre = "";   // Contiendra le texte déchiffré
+
+        // Variables pour les lettres spécifiques lors du chiffrement et déchiffrement
+        char lettreCle, lettreChiffree, lettreDechiffree;
+        int size = texteADechiffrer.length(); // Longueur du texte à chiffrer
+        int i;
 
         // Affiche un message indiquant que le déchiffrement commence
         System.out.println("On déchiffre le texte");
@@ -88,5 +168,7 @@ public class Viginere {
         }
         // Affiche le texte déchiffré pour vérifier que le déchiffrement fonctionne
         System.out.println("Texte déchiffré : " + texteDechiffre);
+
+        rotationMenu();
     }
 }
