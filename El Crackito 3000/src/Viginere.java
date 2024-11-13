@@ -17,21 +17,30 @@ public class Viginere {
     public static void viginere() throws Exception {
         String texteAChiffrer; // Texte à chiffrer
         String cle; // Clé de chiffrement
-        Scanner saisieUtilisateur = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
+        Scanner saisieUtilisateurCle = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
+        Scanner saisieUtilisateurTexteAChiffrer = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
 
         // Demande à l'utilisateur de saisir le texte à chiffrer
         System.out.println("Veuillez saisir le texte à chiffrer :");
-        texteAChiffrer = saisieUtilisateur.nextLine();
+        texteAChiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
+
+        // Vérifie si le texte contient des sauts de ligne, et redemande une entrée correcte si c'est le cas
+        while (texteAChiffrer.contains("\n") || texteAChiffrer.isEmpty()) {
+            System.out.println("\nCe mode de chiffrement ne prend pas en compte les sauts de lignes.");
+            System.out.println("Veuillez entrer un texte sans saut de ligne :");
+            texteAChiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
+        }
+
         // Normalise le texte pour le préparer au chiffrement (sans accents ni caractères spéciaux)
         texteAChiffrer = normalizeText(texteAChiffrer);
-        System.out.println(texteAChiffrer);
+        System.out.println("Texte après normalisation : " + texteAChiffrer);
 
         // Demande à l'utilisateur de saisir la clé de chiffrement
         System.out.println("Veuillez saisir la clé :");
-        cle = saisieUtilisateur.nextLine();
+        cle = saisieUtilisateurCle.next();
         // Normalise la clé pour s'assurer qu'elle ne contient que des lettres minuscules
         cle = normalizeText(cle);
-        System.out.println(cle);
+        System.out.println("Clé après normalisation : " + cle);
 
         // Variables pour le texte chiffré et déchiffré
         String texteADechiffrer = ""; // Contiendra le texte chiffré
@@ -59,7 +68,7 @@ public class Viginere {
             texteADechiffrer += lettreChiffree;
         }
         // Affiche le texte chiffré
-        System.out.println(texteADechiffrer);
+        System.out.println("Texte chiffré : " + texteADechiffrer);
 
         // Affiche un message indiquant que le déchiffrement commence
         System.out.println("On déchiffre le texte");
@@ -78,6 +87,6 @@ public class Viginere {
             texteDechiffre += lettreDechiffree;
         }
         // Affiche le texte déchiffré pour vérifier que le déchiffrement fonctionne
-        System.out.println(texteDechiffre);
+        System.out.println("Texte déchiffré : " + texteDechiffre);
     }
 }
