@@ -11,9 +11,14 @@ public class Viginere {
 
         // Affichage du menu
         Scanner scanner = new Scanner(System.in);
-        System.out.println(ORANGE + "VIGENERE");
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" +ORANGE + "VIGENERE"+ JAUNE + "║");
+        System.out.println(JAUNE + "║" +ORANGE + "            VIGENERE             "+ JAUNE + "║");
+        System.out.println(JAUNE + "║                                 ║");
+        System.out.println(JAUNE + "║" +ORANGE + "     Pour plus d'info sur le     "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" +ORANGE + "   chiffrement Vigenere aller    "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" +ORANGE + "   dans la rubrique aide dans    "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" +ORANGE + "       le menu principale        "+ JAUNE + "║");
+        System.out.println(JAUNE + "║                                 ║");
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
