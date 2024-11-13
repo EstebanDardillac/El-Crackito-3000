@@ -1,5 +1,10 @@
 package utils;
 
+/**
+ * La classe AnsiCouleurs fournit des constantes pour utiliser les codes ANSI de couleurs
+ * dans la console. Ces codes permettent de changer la couleur du texte dans les messages
+ * affichés, rendant l'interface en ligne de commande plus colorée et lisible.
+ */
 public class AnsiCouleurs {
     // Codes ANSI pour les couleurs
     public static final String BLANC = "\u001B[0m";

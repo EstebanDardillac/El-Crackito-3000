@@ -4,11 +4,17 @@ import static utils.AnsiCouleurs.*;
 
 import java.util.Scanner;
 
+/**
+ * La classe AideMenu représente le menu d'aide de l'application El Crackito 3000.
+ * Elle affiche des informations sur les fonctionnalités et options disponibles dans l'application,
+ * et permet à l'utilisateur de naviguer en revenant au menu principal ou de quitter le programme.
+ */
 public class AideMenu {
 
     /**
      * Affiche le menu d'aide et gère les choix de l'utilisateur.
-     * Cette méthode reste active jusqu'à ce que l'utilisateur choisisse de quitter ce menu.
+     * Cette méthode présente un message d'aide expliquant les fonctionnalités de l'application.
+     * L'utilisateur peut choisir de revenir au menu principal ou de quitter l'application.
      */
     public void afficherMenu() {
         // Crée un scanner pour lire les entrées de l'utilisateur

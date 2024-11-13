@@ -4,11 +4,16 @@ import static utils.AnsiCouleurs.*;
 
 import java.util.Scanner;
 
+/**
+ * La classe MenuPrincipal représente le menu principal de l'application El Crackito 3000.
+ * Elle affiche les options principales et permet à l'utilisateur de naviguer entre
+ * les différents menus, incluant les algorithmes de cryptage, le menu d'aide, et l'option de quitter.
+ */
 public class MenuPrincipal {
 
     /**
      * Affiche le menu principal et gère les choix de l'utilisateur.
-     * Cette méthode reste active jusqu'à ce que l'utilisateur choisisse de quitter ce menu.
+     * Cette méthode reste active jusqu'à ce que l'utilisateur choisisse de quitter l'application.
      */
     public void afficherMenu() {
         // Crée un scanner pour lire les entrées de l'utilisateur
