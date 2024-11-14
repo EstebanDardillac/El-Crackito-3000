@@ -28,19 +28,18 @@ public class AideMenu {
         System.out.println(JAUNE + "║" + BLANC + "    Utilisez ces outils pour en apprendre davantage sur le chiffrement.       " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                              ║");
         System.out.println(JAUNE + "║" + VERT + "    Options disponibles :                                                     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    1. Algorithme de César : Un chiffrement simple qui déplace les lettres.   " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    2. Algorithme de Vigenère : Un chiffrement qui utilise un mot-clé pour    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de César : Un chiffrement simple qui déplace les lettres.    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de Vigenère : Un chiffrement qui utilise un mot-clé pour     " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "       encoder le texte.                                                      " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                              ║");
         System.out.println(JAUNE + "║" + BLANC + "    Si vous avez des questions, consultez la documentation ou contactez le    " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    support. Merci d'utiliser " + CYAN_CLAIR + "El Crackito 3000 " + BLANC + "!                              " + JAUNE + "║");
-        System.out.println(JAUNE + "╚══════════════════════════════════════════════════════════════════════════════╝");
+        System.out.println(JAUNE + "║                                                                              ║");
 
         // Affiche les options de navigation
-        System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Revenir au menu principal    " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + "Quitter                      " + JAUNE + "║");
-        System.out.println(JAUNE + "╚═════════════════════════════════╝");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Revenir au menu principal                                                 " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + "Quitter                                                                   " + JAUNE + "║");
+        System.out.println(JAUNE + "╚══════════════════════════════════════════════════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
         if (scanner.hasNextInt()) { // Vérifie si la prochaine entrée de l'utilisateur est un entier
