@@ -1,6 +1,7 @@
 package Menus;
 
 import algo.*;
+import chaine.ChaineDeChiffrement;
 import hash.HashMD5;
 import hash.HashSHA256;
 
@@ -34,11 +35,11 @@ public class MenuPrincipal {
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Algorithme de ROT(X)             " + BLANC + " 6. " + VERT + "Générer nombre pseudo-aléa.  " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Algorithme de Vigenère           " + BLANC + " 7. " + VERT + "Hachage en MD5               " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 3. " + VERT + "Algorithme du Carré de Polybe    " + BLANC + " 8. " + VERT + "Hachage en SHA-256           " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + VERT + "Algorithme du RC4                                                 " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + VERT + "Algorithme du RC4                " + BLANC + " 9. " + VERT + "Chaîne de chiffrement        " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 5. " + VERT + "Algorithme d'Enigma                                               " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                      ║");
-        System.out.println(JAUNE + "║" + BLANC + " 9. " + BLEU + ITALIQUE + "Aide                                                              " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 10. " + ROUGE + ITALIQUE + "Quitter                                                          " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 10. " + BLEU + ITALIQUE + "Aide                                                             " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 11. " + ROUGE + ITALIQUE + "Quitter                                                          " + JAUNE + "║");
         System.out.println(JAUNE + "╚══════════════════════════════════════════════════════════════════════╝");
 
 
@@ -72,10 +73,13 @@ public class MenuPrincipal {
                 case 8: // utiliser le hachage MD5
                     HashSHA256.sha256Menu();
                     break;
-                case 9: // Accéder au menu d'aide
+                case 9: // accéder au menu de la chaîne de chiffrement
+                    ChaineDeChiffrement.menuChaineDeChiffrement();
+                    break;
+                case 10: // Accéder au menu d'aide
                     AideMenu.afficherMenu();
                     break;
-                case 10: // Quitter le menu / l'app
+                case 11: // Quitter le menu / l'app
                     System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
