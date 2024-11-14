@@ -10,25 +10,33 @@
 
 package algo;
 
+import Menus.AideMenu;
+import Menus.MenuPrincipal;
+
 import java.util.Scanner;
 
 import static utils.AnsiCouleurs.*;
 
 public class ChiffrementCarrePolybe {
-    public static void chiffrementMenu() {
+
+    public static void chiffrementMenu() throws Exception {
 
         // Affichage du menu qui permet de choisir entre chiffrer ou déchiffrer un texte
         Scanner scanner = new Scanner(System.in);
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
+        System.out.println(JAUNE + "║" + ORANGE + "        " + GRAS + SOULIGNE + "Carré de Polybe" + BLANC + "          " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                 ║");
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + ROUGE + "Retour au menu principal     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Aide                         " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + ITALIQUE + "Quitter                      " + JAUNE + "║");
         System.out.println(JAUNE + "╚═════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
         // Récupération du choix de l'utilisateur
-        if(scanner.hasNextInt()) {
+        if (scanner.hasNextInt()) {
             int choix = scanner.nextInt();
             switch (choix) {
                 case 1:
@@ -39,19 +47,27 @@ public class ChiffrementCarrePolybe {
                     System.out.println("Vous avez choisi de déchiffrer un texte");
                     carrePolybeAlgo(false); // Envoie false pour déchiffrer le texte
                     break;
-                case 3:
-                    System.out.println("Vous avez choisi de retourner au menu principal");
+                case 3: // Accéder au menu d'aide
+                    AideMenu.afficherMenu();
+                    break;
+                case 4: // Revenir au menu principal
+                    MenuPrincipal.afficherMenu();
+                    break;
+                case 5: // Quitter le menu / l'app
+                    System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
+                    System.exit(0);
                     break;
                 default:
-                    System.out.println("Vous n'avez pas choisi une option valide");
+                    System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
                     break;
             }
         } else {
-            System.out.println("Vous n'avez pas choisi une option valide");
+            System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+            chiffrementMenu();
         }
     }
 
-    public static void carrePolybeAlgo(Boolean choix) {
+    public static void carrePolybeAlgo(Boolean choix) throws Exception {
         // Création de plusieurs matriceS contentant des carrés de Polybe différents
         // On laisse le choix à l'utilisateur de choisir le carré de Polybe qu'il souhaite
         // Le W est remplacé par deux V donc la lettre W n'est pas présente
