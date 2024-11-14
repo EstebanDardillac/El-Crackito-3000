@@ -1,7 +1,9 @@
 package algo;
 
+
 import Menus.AideMenu;
 import Menus.MenuPrincipal;
+
 
 import java.text.Normalizer;
 import java.util.Scanner;
@@ -33,6 +35,7 @@ public class Vigenere {
         System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal         " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                          " + JAUNE + "║");
         System.out.println(JAUNE + "╚═════════════════════════════════════╝");
+
         System.out.print(BLEU + "Choisissez une option : ");
 
         // Récupération du choix de l'utilisateur
@@ -67,7 +70,7 @@ public class Vigenere {
             rotationMenu();
         }
     }
-
+  
     // Méthode de normalisation du texte pour retirer tous les caractères spéciaux, chiffres et accents
     public static String normalizeText(String text) {
         // Normalise le texte pour retirer les accents et les caractères spéciaux
