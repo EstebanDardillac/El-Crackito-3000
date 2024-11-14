@@ -25,12 +25,10 @@ public class LFSR {
         // Affichage du menu pour l'option LFSR
         Scanner scanner = new Scanner(System.in);
         System.out.println(JAUNE + "╔══════════════════════════════════════════════════╗");
-        System.out.println(JAUNE + "║" +ORANGE + "                      LFSR                        "+ JAUNE + "║");
-        System.out.println(JAUNE + "║                                                  ║");
+        System.out.println(JAUNE + "║" + ORANGE + "                      " + GRAS + SOULIGNE + "LFSR" + BLANC + "                        "+ JAUNE + "║");
         System.out.println(JAUNE + "║                                                  ║");
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Regénerer un ou des nombres pseudos aléaoires " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + "Retour au menu principal                      " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                                  ║");
         System.out.println(JAUNE + "╚══════════════════════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
@@ -114,13 +112,13 @@ public class LFSR {
 
         // Affiche une aide sur la génération de nombres pseudo-aléatoires
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" +ORANGE + "              LFSR               "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "              " + GRAS + SOULIGNE + "LFSR" + BLANC + "               "+ JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" +ORANGE + "     Pour plus d'info sur le     "+ JAUNE + "║");
-        System.out.println(JAUNE + "║" +ORANGE + "   génération nombres pseudos    "+ JAUNE + "║");
-        System.out.println(JAUNE + "║" +ORANGE + "    aléatoires aller dans la     "+ JAUNE + "║");
-        System.out.println(JAUNE + "║" +ORANGE + "      rubrique aide dans le      "+ JAUNE + "║");
-        System.out.println(JAUNE + "║" +ORANGE + "         menu principale         "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "     Pour plus d'info sur le     "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   génération nombres pseudos    "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "    aléatoires aller dans la     "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "      rubrique aide dans le      "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "         menu principale         "+ JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
         System.out.println(JAUNE + "╚═════════════════════════════════╝");
 

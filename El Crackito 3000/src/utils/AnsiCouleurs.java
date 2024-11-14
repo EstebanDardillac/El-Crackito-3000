@@ -6,6 +6,11 @@ package utils;
  * affichés, rendant l'interface en ligne de commande plus colorée et lisible.
  */
 public class AnsiCouleurs {
+    // Codes ANSI pour les styles de texte
+    public static final String GRAS = "\u001B[1m";
+    public static final String ITALIQUE = "\u001B[3m";
+    public static final String SOULIGNE = "\u001B[4m";
+
     // Codes ANSI pour les couleurs
     public static final String BLANC = "\u001B[0m";
     public static final String ROUGE = "\u001B[31m";
