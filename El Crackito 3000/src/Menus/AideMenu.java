@@ -24,11 +24,12 @@ public class AideMenu {
         System.out.println(JAUNE + "╔══════════════════════════════════════════════════════════════════════════════╗");
         System.out.println(JAUNE + "║" + BLEU + "    Bienvenue dans le menu d'aide d'" + CYAN_CLAIR + "El Crackito 3000 " + BLEU + "!                        " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    Ce programme propose plusieurs algorithmes de cryptage,                   " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    notamment les algorithmes de César et de Vigenère.                        " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    notamment les algorithmes de Rotation (Rot(X)) et de Vigenère.            " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    Utilisez ces outils pour en apprendre davantage sur le chiffrement.       " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                              ║");
         System.out.println(JAUNE + "║" + VERT + "    Options disponibles :                                                     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de César : Un chiffrement simple qui déplace les lettres.    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de Rotation (Rot(X)) : Un chiffrement simple qui déplace les " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "      lettres d'un certain nombre de positions.                               " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de Vigenère : Un chiffrement qui utilise un mot-clé pour     " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "      encoder le texte.                                                       " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                              ║");
@@ -37,7 +38,7 @@ public class AideMenu {
         System.out.println(JAUNE + "║                                                                              ║");
 
         // Affiche les options de navigation
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Revenir au menu principal                                                 " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + BLEU + "Revenir au menu principal                                                 " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + "Quitter                                                                   " + JAUNE + "║");
         System.out.println(JAUNE + "╚══════════════════════════════════════════════════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
@@ -47,14 +48,13 @@ public class AideMenu {
 
             switch (choix) {
                 case 1: // Revenir au menu principal
-                    MenuPrincipal menuPrincipal = new MenuPrincipal();
-                    menuPrincipal.afficherMenu();
+                    MenuPrincipal.afficherMenu();
                     break;
                 case 2: // Quitter le menu / l'app
                     System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
-                default:// Message d'erreur pour un choix non valide
+                default: // Message d'erreur pour un choix non valide
                     System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
             }
         } else { // Si l'entrée n'est pas un entier, affiche un message d'erreur

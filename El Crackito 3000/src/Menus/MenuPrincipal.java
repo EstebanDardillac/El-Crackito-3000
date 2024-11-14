@@ -2,6 +2,7 @@ package Menus;
 
 import algo.ChiffrementRotation;
 import algo.LFSR;
+
 import algo.Vigenere;
 
 import static utils.AnsiCouleurs.*;
@@ -38,6 +39,7 @@ public class MenuPrincipal {
         System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Aide                                  " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                               " + JAUNE + "║");
         System.out.println(JAUNE + "╚══════════════════════════════════════════╝");
+
         System.out.print(BLEU + "Choisissez une option : ");
 
         if (scanner.hasNextInt()) { // Vérifie si la prochaine entrée de l'utilisateur est un entier
@@ -50,7 +52,7 @@ public class MenuPrincipal {
                 case 2: // utiliser l'algorithme de Vigenère
                     Vigenere.rotationMenu();
                     break;
-                case 3: // Accéder au menu d'aide
+                case 3: // générer un ou plusieurs nombre(s) psuedo(s)-aléatoire(s)
                     LFSR.GenererPseudo();
                     break;
                 case 4: // Accéder au menu d'aide
