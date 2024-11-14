@@ -57,7 +57,7 @@ public class MenuPrincipal {
                 case 3: // générer un ou plusieurs nombre(s) psuedo(s)-aléatoire(s)
                     LFSR.GenererPseudo();
                     break;
-                case 4:
+                case 4: // utiliser le hachage MD5
                     HashMD5.md5Menu();
                     break;
                 case 5: // Accéder au menu d'aide
