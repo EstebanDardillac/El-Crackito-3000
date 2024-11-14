@@ -10,6 +10,9 @@
 
 package algo;
 
+import Menus.AideMenu;
+import Menus.MenuPrincipal;
+
 import java.lang.String;
 
 import java.text.Normalizer;
@@ -21,17 +24,29 @@ import static utils.AnsiCouleurs.*;
 public class ChiffrementRotation {
 
     // Affiche un menu qui permet de choisir entre chiffrer ou déchiffrer un texte
-    public static void chiffrementMenu() {
+    public static void chiffrementMenu() throws Exception {
 
         // Affichage du menu qui permet de choisir entre chiffrer ou déchiffrer un texte
         Scanner scanner = new Scanner(System.in);
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
+        System.out.println(JAUNE + "║" + ORANGE + "         ROTATION (ROT(X))       " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                 ║");
+        System.out.println(JAUNE + "║" + ORANGE + "   Le chiffrement par rotation   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   déplace chaque lettre d'un    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "  certain nombre de positions,   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   défini par Rot(X), dans       " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   l'alphabet pour produire      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "       un texte chiffré.         " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                 ║");
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + ROUGE + "Retour au menu principal     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + "Aide                         " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                      " + JAUNE + "║");
         System.out.println(JAUNE + "╚═════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
+
 
         // Récupération du choix de l'utilisateur
         if(scanner.hasNextInt()) {
@@ -45,20 +60,29 @@ public class ChiffrementRotation {
                     System.out.println("Vous avez choisi de déchiffrer un texte");
                     rotationAlgo(false); // Envoie false pour déchiffrer le texte
                     break;
-                case 3:
-                    System.out.println("Vous avez choisi de retourner au menu principal");
+                case 3: // Accéder au menu d'aide
+                    AideMenu.afficherMenu();
                     break;
-                default:
-                    System.out.println("Vous n'avez pas choisi une option valide");
+                case 4: // Revenir au menu principal
+                    MenuPrincipal.afficherMenu();
+                    break;
+                case 5: // Quitter le menu / l'app
+                    System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
+                    System.exit(0);
+                    break;
+                default: // Message d'erreur pour un choix non valide
+                    System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+                    chiffrementMenu();
                     break;
             }
         } else {
-            System.out.println("Vous n'avez pas choisi une option valide");
+            System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+            chiffrementMenu();
         }
     }
 
     // Chiffre ou déchiffre un texte en fonction du choix de l'utilisateur
-    public static void rotationAlgo(Boolean choix) {
+    public static void rotationAlgo(Boolean choix) throws Exception {
 
         // Demande à l'utilisateur de saisir le texte à chiffrer
         Scanner scanner = new Scanner(System.in);
@@ -83,7 +107,6 @@ public class ChiffrementRotation {
         }
 
         // Initialisation des variables
-        String texteADechiffrer = "";
         String texteDechiffre = "";
         char lettreAChiffrer;
         char lettreChiffree;
@@ -107,11 +130,11 @@ public class ChiffrementRotation {
                 lettreChiffree = (char) (((lettreAChiffrer + rot - 96) ) % 26 + 96);
 
                 // on ajoute la lettre chiffrée au texte à déchiffrer
-                texteADechiffrer += lettreChiffree;
+                texteDechiffre += lettreChiffree;
 
             }
             // on affiche le texte chiffré
-            System.out.println("Votre texte chiffre est : " + texteADechiffrer);
+            System.out.println("Votre texte chiffre est : " + texteDechiffre);
             chiffrementMenu();
         }
 
@@ -121,7 +144,7 @@ public class ChiffrementRotation {
             // On répète l'opération pour chaque lettre du texte à déchiffrer
             for (i = 0; i < size; i++) {
                 // on récupère la lettre à déchiffrer
-                lettreChiffree = texteADechiffrer.charAt(i);
+                lettreChiffree = texteAChiffrer.charAt(i);
 
                 // on déchiffre la lettre en appliquant la formule
                 // (lettreChiffree - rot(x) + 26) % 26

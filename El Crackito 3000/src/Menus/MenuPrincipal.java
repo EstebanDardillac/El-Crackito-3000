@@ -1,5 +1,8 @@
 package Menus;
 
+import algo.ChiffrementRotation;
+import algo.Vigenere;
+
 import static utils.AnsiCouleurs.*;
 
 import java.util.Scanner;
@@ -15,7 +18,7 @@ public class MenuPrincipal {
      * Affiche le menu principal et gère les choix de l'utilisateur.
      * Cette méthode reste active jusqu'à ce que l'utilisateur choisisse de quitter l'application.
      */
-    public void afficherMenu() {
+    public static void afficherMenu() throws Exception {
         // Crée un scanner pour lire les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
 
@@ -27,7 +30,7 @@ public class MenuPrincipal {
         System.out.println("/_____/_/   \\____/_/   \\__,_/\\___/_/|_/_/\\__/\\____/   /____/\\____/\\____/\\____/  ");
         System.out.println(ORANGE + "\n✦ " + BLEU + "Menu Principal - El Crackito 3000" + ORANGE + " ✦");
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Algorithme de César          " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Algorithme de ROT(X)         " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Algorithme de Vigenère       " + JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
         System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + "Aide                         " + JAUNE + "║");
@@ -40,16 +43,13 @@ public class MenuPrincipal {
 
             switch (choix) {
                 case 1: // utiliser l'algorithme de César
-                    CesarMenu cesarMenu = new CesarMenu();
-                    cesarMenu.afficherMenu();
+                    ChiffrementRotation.chiffrementMenu();
                     break;
                 case 2: // utiliser l'algorithme de Vigenère
-                    VigenereMenu vigenereMenu = new VigenereMenu();
-                    vigenereMenu.showMenu();
+                    Vigenere.rotationMenu();
                     break;
                 case 3: // Accéder au menu d'aide
-                    AideMenu helpMenu = new AideMenu();
-                    helpMenu.afficherMenu();
+                    AideMenu.afficherMenu();
                     break;
                 case 4: // Quitter le menu / l'app
                     System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
@@ -57,10 +57,11 @@ public class MenuPrincipal {
                     break;
                 default: // Message d'erreur pour un choix non valide
                     System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+                    afficherMenu();
             }
-        } else { // Si l'entrée n'est pas un entier, affiche un message d'erreur
-            System.out.println(ROUGE + "Entrée non valide. Veuillez entrer un nombre.");
-            scanner.next(); // Consomme l'entrée non valide pour éviter une boucle infinie en sautant l'entrée incorrecte
+        } else {
+            System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+            afficherMenu();
         }
 
         // Ferme le scanner pour libérer les ressources
