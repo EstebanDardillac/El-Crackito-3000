@@ -14,7 +14,6 @@ import static utils.AnsiCouleurs.JAUNE;
  */
 
 public class LFSR {
-    MenuPrincipal menuPrincipal = new MenuPrincipal();
     private String Graine; // Graine initiale pour le LFSR
     private int position; // Position du bit de retour dans le registre
 
