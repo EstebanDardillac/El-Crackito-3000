@@ -76,7 +76,7 @@ public class HashMD5 {
         Scanner scanner = new Scanner(System.in);
         System.out.print(BLEU + "Entrez le message pour calculer son hash MD5 : ");
         String message = scanner.nextLine();
-        String hash = HachageMethode.hacher(message, "MD5");;
+        String hash = HachageMethode.hacher(message, "MD5");
         System.out.println(BLEU + "Hash MD5 du message : " + hash);
     }
 
