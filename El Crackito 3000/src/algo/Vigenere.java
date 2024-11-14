@@ -14,21 +14,25 @@ public class Vigenere {
 
         // Affichage du menu
         Scanner scanner = new Scanner(System.in);
-        System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + ORANGE + "            VIGENERE             " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + ORANGE + "     Pour plus d'info sur le     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "   chiffrement Vigenere aller    " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "   dans la rubrique aide dans    " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "       le menu principale        " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + "Aide                         " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                      " + JAUNE + "║");
-        System.out.println(JAUNE + "╚═════════════════════════════════╝");
+        System.out.println(JAUNE + "╔═════════════════════════════════════╗");
+        System.out.println(JAUNE + "║" + ORANGE + "            VIGENERE                 " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                     ║");
+        System.out.println(JAUNE + "║" + ORANGE + "   Le chiffrement de Vigenère        " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   utilise un mot-clé pour chiffrer  " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   le texte en décalant chaque       " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   lettre en fonction des lettres    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   du mot-clé. Ce système rend le    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   chiffrement plus difficile à      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   casser que les substitutions      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   simples.                          " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                     ║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte               " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte             " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                     ║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + "Aide                             " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal         " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                          " + JAUNE + "║");
+        System.out.println(JAUNE + "╚═════════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
         // Récupération du choix de l'utilisateur
