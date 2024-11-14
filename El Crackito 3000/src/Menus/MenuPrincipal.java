@@ -1,6 +1,7 @@
 package Menus;
 
 import algo.ChiffrementRotation;
+import algo.HashMD5;
 import algo.LFSR;
 
 import algo.Vigenere;
@@ -30,14 +31,15 @@ public class MenuPrincipal {
         System.out.println("  / __/ / /  / /   / ___/ __ `/ ___/ //_/ / __/ __ \\     /_ </ / / / / / / / / /");
         System.out.println(" / /___/ /  / /___/ /  / /_/ / /__/ ,< / / /_/ /_/ /   ___/ / /_/ / /_/ / /_/ / ");
         System.out.println("/_____/_/   \\____/_/   \\__,_/\\___/_/|_/_/\\__/\\____/   /____/\\____/\\____/\\____/  ");
-        System.out.println(ORANGE + "\n✦ " + BLEU + "Menu Principal - El Crackito 3000" + ORANGE + " ✦");
+        System.out.println(ORANGE + "\n✦ " + BLEU + "Menu Principal - " + GRAS + "El Crackito 3000" + ORANGE + " ✦");
         System.out.println(JAUNE + "╔══════════════════════════════════════════╗");
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Algorithme de ROT(X)                  " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Algorithme de Vigenère                " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 3. " + VERT + "Générer un nombres pseudos aléatoires " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + VERT + "Hachage en MD5                        " + JAUNE + "║");
         System.out.println(JAUNE + "║                                          ║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Aide                                  " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                               " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + BLEU + ITALIQUE + "Aide                                  " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 6. " + ROUGE + ITALIQUE + "Quitter                               " + JAUNE + "║");
         System.out.println(JAUNE + "╚══════════════════════════════════════════╝");
 
         System.out.print(BLEU + "Choisissez une option : ");
@@ -55,10 +57,13 @@ public class MenuPrincipal {
                 case 3: // générer un ou plusieurs nombre(s) psuedo(s)-aléatoire(s)
                     LFSR.GenererPseudo();
                     break;
-                case 4: // Accéder au menu d'aide
+                case 4:
+                    HashMD5.md5Menu();
+                    break;
+                case 5: // Accéder au menu d'aide
                     AideMenu.afficherMenu();
                     break;
-                case 5: // Quitter le menu / l'app
+                case 6: // Quitter le menu / l'app
                     System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;

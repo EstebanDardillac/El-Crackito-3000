@@ -29,7 +29,7 @@ public class ChiffrementRotation {
         // Affichage du menu qui permet de choisir entre chiffrer ou déchiffrer un texte
         Scanner scanner = new Scanner(System.in);
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + ORANGE + "         ROTATION (ROT(X))       " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "         " + GRAS + SOULIGNE + "ROTATION (ROT(X))" + BLANC + "       " + JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
         System.out.println(JAUNE + "║" + ORANGE + "   Le chiffrement par rotation   " + JAUNE + "║");
         System.out.println(JAUNE + "║" + ORANGE + "   déplace chaque lettre d'un    " + JAUNE + "║");
@@ -41,9 +41,9 @@ public class ChiffrementRotation {
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
         System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + "Aide                         " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Aide                         " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + ITALIQUE + "Retour au menu principal     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + ITALIQUE + "Quitter                      " + JAUNE + "║");
         System.out.println(JAUNE + "╚═════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 

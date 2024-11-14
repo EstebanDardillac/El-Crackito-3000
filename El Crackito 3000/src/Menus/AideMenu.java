@@ -22,7 +22,7 @@ public class AideMenu {
 
         // Affiche le message d'aide
         System.out.println(JAUNE + "╔══════════════════════════════════════════════════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + BLEU + "    Bienvenue dans le menu d'aide d'" + CYAN_CLAIR + "El Crackito 3000 " + BLEU + "!                        " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLEU + "    Bienvenue dans le menu d'aide d'" + GRAS + CYAN_CLAIR + "El Crackito 3000 " + BLEU + "!                        " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    Ce programme propose plusieurs algorithmes de cryptage,                   " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    notamment les algorithmes de Rotation (Rot(X)) et de Vigenère.            " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    Utilisez ces outils pour en apprendre davantage sur le chiffrement.       " + JAUNE + "║");
@@ -34,12 +34,12 @@ public class AideMenu {
         System.out.println(JAUNE + "║" + BLANC + "      encoder le texte.                                                       " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                              ║");
         System.out.println(JAUNE + "║" + BLANC + "    Si vous avez des questions, consultez la documentation ou contactez le    " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    support. Merci d'utiliser " + CYAN_CLAIR + "El Crackito 3000 " + BLANC + "!                              " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    support. Merci d'utiliser " + GRAS + CYAN_CLAIR + "El Crackito 3000 " + BLANC + "!                              " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                              ║");
 
         // Affiche les options de navigation
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + BLEU + "Revenir au menu principal                                                 " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + "Quitter                                                                   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + BLEU + ITALIQUE + "Revenir au menu principal                                                 " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + ITALIQUE + "Quitter                                                                   " + JAUNE + "║");
         System.out.println(JAUNE + "╚══════════════════════════════════════════════════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
