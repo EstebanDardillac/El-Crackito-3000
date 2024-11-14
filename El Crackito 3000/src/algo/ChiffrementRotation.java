@@ -1,3 +1,13 @@
+/*
+
+    Auteur : Aya AIDOUNI
+    Description :
+    Ce programme permet de chiffrer ou déchiffrer un texte en utilisant la méthode de chiffrement par rotation.
+    L'utilisateur peut choisir entre chiffrer ou déchiffrer un texte, puis saisir le texte à chiffrer ou déchiffrer
+    ainsi que la rotation à appliquer. Le texte chiffré ou déchiffré est ensuite affiché à l'écran.
+
+ */
+
 package algo;
 
 import java.lang.String;
@@ -8,12 +18,12 @@ import java.util.Scanner;
 import static utils.AnsiCouleurs.*;
 
 
-public class RotationAlgo {
+public class ChiffrementRotation {
 
     // Affiche un menu qui permet de choisir entre chiffrer ou déchiffrer un texte
-    public static void rotationMenu() {
+    public static void chiffrementMenu() {
 
-        // Affichage du menu
+        // Affichage du menu qui permet de choisir entre chiffrer ou déchiffrer un texte
         Scanner scanner = new Scanner(System.in);
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
         System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
@@ -45,8 +55,6 @@ public class RotationAlgo {
         } else {
             System.out.println("Vous n'avez pas choisi une option valide");
         }
-
-
     }
 
     // Chiffre ou déchiffre un texte en fonction du choix de l'utilisateur
@@ -58,9 +66,9 @@ public class RotationAlgo {
         String texteAChiffrer = scanner.nextLine();
 
         // Vérification de la validité du texte
-        while (texteAChiffrer.isEmpty()) {
-            System.out.println("Veuillez saisir un texte valide : ");
-            texteAChiffrer = scanner.nextLine();
+        while (texteAChiffrer.contains("\n") || texteAChiffrer.isEmpty()) {
+            System.out.println("Le texte saisit n'est pas valide.");
+            chiffrementMenu();
         }
 
         // Demande à l'utilisateur de saisir la rotation
@@ -70,8 +78,8 @@ public class RotationAlgo {
         // Vérification de la validité de la rotation
         // Pas vide, nombre négatif, ou autre caractère qu'un nombre entier
         while (rot <= 0 || rot >= 26 ) {
-            System.out.println("Veuillez saisir une rotation valide : ");
-            rot = scanner.nextInt();
+            System.out.println("La rotation saisie n'est pas valide.");
+            chiffrementMenu();
         }
 
         // Initialisation des variables
@@ -103,7 +111,8 @@ public class RotationAlgo {
 
             }
             // on affiche le texte chiffré
-            System.out.println(texteADechiffrer);
+            System.out.println("Votre texte chiffre est : " + texteADechiffrer);
+            chiffrementMenu();
         }
 
 
@@ -123,7 +132,8 @@ public class RotationAlgo {
                 texteDechiffre += lettreDechiffree;
             }
             // on affiche le texte déchiffré
-            System.out.println(texteDechiffre);
+            System.out.println("Votre texte dechiffre est : " + texteDechiffre);
+            chiffrementMenu();
         }
 
     }
