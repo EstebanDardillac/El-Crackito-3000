@@ -30,7 +30,7 @@ public class AideMenu {
         System.out.println(JAUNE + "║" + VERT + "    Options disponibles :                                                     " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de César : Un chiffrement simple qui déplace les lettres.    " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de Vigenère : Un chiffrement qui utilise un mot-clé pour     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "      encoder le texte.                                                      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "      encoder le texte.                                                       " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                              ║");
         System.out.println(JAUNE + "║" + BLANC + "    Si vous avez des questions, consultez la documentation ou contactez le    " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + "    support. Merci d'utiliser " + CYAN_CLAIR + "El Crackito 3000 " + BLANC + "!                              " + JAUNE + "║");
