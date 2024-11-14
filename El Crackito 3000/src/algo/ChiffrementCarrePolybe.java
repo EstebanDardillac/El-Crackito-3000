@@ -37,7 +37,7 @@ public class ChiffrementCarrePolybe {
         System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte           " + JAUNE + "║");
         System.out.println(JAUNE + "║                                   ║");
         System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Aide                           " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal       " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + ITALIQUE + "Retour au menu principal       " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + ITALIQUE + "Quitter                        " + JAUNE + "║");
         System.out.println(JAUNE + "╚═══════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
