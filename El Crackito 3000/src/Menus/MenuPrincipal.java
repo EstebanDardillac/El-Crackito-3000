@@ -52,7 +52,7 @@ public class MenuPrincipal {
                     helpMenu.afficherMenu();
                     break;
                 case 4: // Quitter le menu / l'app
-                    System.out.println(VERT + "Merci d'avoir utilisé El Crakito 3000 !");
+                    System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
                 default: // Message d'erreur pour un choix non valide

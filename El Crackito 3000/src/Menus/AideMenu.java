@@ -21,17 +21,20 @@ public class AideMenu {
         Scanner scanner = new Scanner(System.in);
 
         // Affiche le message d'aide
-        System.out.println(BLEU + "Bienvenue dans le menu d'aide d'El Crackito 3000 !" + BLANC);
-        System.out.println("Ce programme propose plusieurs algorithmes de cryptage,");
-        System.out.println("notamment les algorithmes de César et de Vigenère.");
-        System.out.println("Utilisez ces outils pour en apprendre davantage sur le chiffrement.");
-        System.out.println();
-        System.out.println("Options disponibles :");
-        System.out.println("1. Algorithme de César : Un chiffrement simple qui déplace les lettres.");
-        System.out.println("2. Algorithme de Vigenère : Un chiffrement qui utilise un mot-clé pour encoder le texte.");
-        System.out.println();
-        System.out.println("Si vous avez des questions, consultez la documentation ou contactez le support.");
-        System.out.println("Merci d'utiliser El Crackito 3000 !\n");
+        System.out.println(JAUNE + "╔══════════════════════════════════════════════════════════════════════════════╗");
+        System.out.println(JAUNE + "║" + BLEU + "    Bienvenue dans le menu d'aide d'" + CYAN_CLAIR + "El Crackito 3000 " + BLEU + "!                        " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    Ce programme propose plusieurs algorithmes de cryptage,                   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    notamment les algorithmes de César et de Vigenère.                        " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    Utilisez ces outils pour en apprendre davantage sur le chiffrement.       " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                                                              ║");
+        System.out.println(JAUNE + "║" + VERT + "    Options disponibles :                                                     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    1. Algorithme de César : Un chiffrement simple qui déplace les lettres.   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    2. Algorithme de Vigenère : Un chiffrement qui utilise un mot-clé pour    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "       encoder le texte.                                                      " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                                                              ║");
+        System.out.println(JAUNE + "║" + BLANC + "    Si vous avez des questions, consultez la documentation ou contactez le    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    support. Merci d'utiliser " + CYAN_CLAIR + "El Crackito 3000 " + BLANC + "!                              " + JAUNE + "║");
+        System.out.println(JAUNE + "╚══════════════════════════════════════════════════════════════════════════════╝");
 
         // Affiche les options de navigation
         System.out.println(JAUNE + "╔═════════════════════════════════╗");
@@ -49,7 +52,7 @@ public class AideMenu {
                     menuPrincipal.afficherMenu();
                     break;
                 case 2: // Quitter le menu / l'app
-                    System.out.println(VERT + "Merci d'avoir utilisé El Crakito 3000 !");
+                    System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
                 default:// Message d'erreur pour un choix non valide
