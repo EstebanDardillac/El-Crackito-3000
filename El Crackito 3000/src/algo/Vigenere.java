@@ -39,7 +39,7 @@ public class Vigenere {
         System.out.print(BLEU + "Choisissez une option : ");
 
         // Récupération du choix de l'utilisateur
-        if(scanner.hasNextInt()) {
+        if (scanner.hasNextInt()) {
             int choix = scanner.nextInt();
             switch (choix) {
                 case 1:

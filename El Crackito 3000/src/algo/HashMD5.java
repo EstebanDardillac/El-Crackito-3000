@@ -28,36 +28,42 @@ public class HashMD5 {
             System.out.println(JAUNE + "╚══════════════════════════════════════╝");
             System.out.print(BLEU + "Choisissez une option : ");
 
-            int choix = scanner.nextInt();
-            scanner.nextLine(); // Consomme la fin de ligne
+            // Vérifie si l'entrée est un entier avant de lire le choix
+            if (scanner.hasNextInt()) {
+                int choix = scanner.nextInt();
+                scanner.nextLine(); // Consomme la fin de ligne
 
-            try {
-                switch (choix) {
-                    case 1: // Appelle la méthode pour calculer le hash
-                        calculerHashMessage();
-                        break;
-                    case 2: // Appelle la méthode pour comparer deux hash
-                        comparerHashMessages();
-                        break;
-                    case 3: // Accéder au menu d'aide
-                        AideMenu.afficherMenu();
-                        break;
-                    case 4: // Revenir au menu principal
-                        MenuPrincipal.afficherMenu();
-                        return;
-                    case 5: // Quitter le menu / l'app
-                        System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
-                        System.exit(0);
-                        break;
-                    default:
-                        System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
-                        break;
+                try {
+                    switch (choix) {
+                        case 1: // Appelle la méthode pour calculer le hash
+                            calculerHashMessage();
+                            break;
+                        case 2: // Appelle la méthode pour comparer deux hash
+                            comparerHashMessages();
+                            break;
+                        case 3: // Accéder au menu d'aide
+                            AideMenu.afficherMenu();
+                            break;
+                        case 4: // Revenir au menu principal
+                            MenuPrincipal.afficherMenu();
+                            return;
+                        case 5: // Quitter le menu / l'app
+                            System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
+                            System.exit(0);
+                            break;
+                        default:
+                            System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+                            break;
+                    }
+                } catch (NoSuchAlgorithmException e) {
+                    System.err.println(ITALIQUE + ROUGE + "Erreur : Algorithme MD5 non disponible.");
+                } catch (Exception e) {
+                    System.out.println(GRAS + ROUGE + "Une erreur a été détectée : " + e);
+                    throw new RuntimeException(e);
                 }
-            } catch (NoSuchAlgorithmException e) {
-                System.err.println(ITALIQUE + ROUGE + "Erreur : Algorithme MD5 non disponible.");
-            } catch (Exception e) {
-                System.out.println(GRAS + ROUGE + "Une erreur a été détectée : " + e);
-                throw new RuntimeException(e);
+            } else {
+                System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+                md5Menu();
             }
         }
     }
