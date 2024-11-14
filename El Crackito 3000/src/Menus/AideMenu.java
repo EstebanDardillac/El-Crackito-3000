@@ -56,10 +56,11 @@ public class AideMenu {
                     break;
                 default: // Message d'erreur pour un choix non valide
                     System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+                    afficherMenu();
             }
-        } else { // Si l'entrée n'est pas un entier, affiche un message d'erreur
-            System.out.println(ROUGE + "Entrée non valide. Veuillez entrer un nombre.");
-            scanner.next(); // Consomme l'entrée non valide pour éviter une boucle infinie en sautant l'entrée incorrecte
+        } else {
+            System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+            afficherMenu();
         }
 
         // Ferme le scanner pour libérer les ressources

@@ -24,15 +24,21 @@ public class HashSHA256 {
 
         while (true) {
             // Affichage du menu
-            System.out.println(JAUNE + "╔══════════════════════════════════════════╗");
-            System.out.println(JAUNE + "║" + ORANGE + "                 " + GRAS + SOULIGNE + "SHA-256" + BLANC + "                  " + JAUNE + "║");
-            System.out.println(JAUNE + "║                                          ║");
-            System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Calculer le hash SHA-256 d'un message " + JAUNE + "║");
-            System.out.println(JAUNE + "║                                          ║");
-            System.out.println(JAUNE + "║" + BLANC + " 2. " + BLEU + ITALIQUE + "Aide                                  " + JAUNE + "║");
-            System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Retour au menu principal              " + JAUNE + "║");
-            System.out.println(JAUNE + "║" + BLANC + " 4. " + ROUGE + ITALIQUE + "Quitter                               " + JAUNE + "║");
-            System.out.println(JAUNE + "╚══════════════════════════════════════════╝");
+            System.out.println(JAUNE + "╔════════════════════════════════════════════╗");
+            System.out.println(JAUNE + "║" + ORANGE + "                   " + GRAS + SOULIGNE + "SHA-256" + BLANC + "                  " + JAUNE + "║");
+            System.out.println(JAUNE + "║                                            ║");
+            System.out.println(JAUNE + "║" + ORANGE + "  L'algorithme SHA-256 génère une empreinte " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + "  unique de 256 bits à partir d'un message, " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + "   offrant une vérification fiable de son   " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + "      intégrité avec un haut niveau         " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + "               de sécurité.                 " + JAUNE + "║");
+            System.out.println(JAUNE + "║                                            ║");
+            System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Calculer le hash SHA-256 d'un message   " + JAUNE + "║");
+            System.out.println(JAUNE + "║                                            ║");
+            System.out.println(JAUNE + "║" + BLANC + " 2. " + BLEU + ITALIQUE + "Aide                                    " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Retour au menu principal                " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + BLANC + " 4. " + ROUGE + ITALIQUE + "Quitter                                 " + JAUNE + "║");
+            System.out.println(JAUNE + "╚════════════════════════════════════════════╝");
             System.out.print(BLEU + "Choisissez une option : ");
 
             // Vérifie si l'entrée est un entier

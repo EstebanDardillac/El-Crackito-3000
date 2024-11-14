@@ -9,27 +9,27 @@ import static utils.AnsiCouleurs.*;
 import static utils.AnsiCouleurs.ROUGE;
 
 public class ChiffrementEnigma {
-    public static void chiffrementMenu() throws Exception {
 
+    public static void chiffrementMenu() throws Exception {
         // Affichage du menu qui permet de choisir entre chiffrer ou déchiffrer un texte
         Scanner scanner = new Scanner(System.in);
-        System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + ORANGE + "         ROTATION (ROT(X))       " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + ORANGE + "   Le chiffrement par rotation   " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "   déplace chaque lettre d'un    " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "  certain nombre de positions,   " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "   défini par Rot(X), dans       " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "   l'alphabet pour produire      " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + ORANGE + "       un texte chiffré.         " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + "Aide                         " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + "Quitter                      " + JAUNE + "║");
-        System.out.println(JAUNE + "╚═════════════════════════════════╝");
+        System.out.println(JAUNE + "╔═══════════════════════════════════╗");
+        System.out.println(JAUNE + "║" + ORANGE + "                " + GRAS + SOULIGNE + "ENIGMA" + BLANC + "             " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                   ║");
+        System.out.println(JAUNE + "║" + ORANGE + "  L'algorithme Enigma utilise des  " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   rotors pour substituer chaque   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   lettre, inversant le message    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "   via un miroir et revenant par   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "  les rotors pour un chiffrement   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "      complexe du texte.           " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                   ║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte             " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte           " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                   ║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Aide                           " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + ITALIQUE + "Retour au menu principal       " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + ITALIQUE + "Quitter                        " + JAUNE + "║");
+        System.out.println(JAUNE + "╚═══════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
 
@@ -52,7 +52,7 @@ public class ChiffrementEnigma {
                     MenuPrincipal.afficherMenu();
                     break;
                 case 5: // Quitter le menu / l'app
-                    System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
+                    System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
                 default: // Message d'erreur pour un choix non valide
@@ -70,12 +70,12 @@ public class ChiffrementEnigma {
 
         // Demande à l'utilisateur de saisir le texte à chiffrer ou déchiffrer
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Veuillez saisir le texte : ");
+        System.out.println(BLEU + "Veuillez saisir le texte : ");
         String texteUtilisateur = scanner.nextLine();
 
         // Vérification de la validité du texte
         while (texteUtilisateur.contains("\n") || texteUtilisateur.isEmpty()) {
-            System.out.println("Le texte saisi n'est pas valide.");
+            System.out.println(ROUGE + "Le texte saisi n'est pas valide.");
             chiffrementMenu();
         }
 
@@ -150,8 +150,8 @@ public class ChiffrementEnigma {
         }
 
         // Affichage du texte chiffré
-        System.out.println("Votre texte chiffré est : " + texteChiffre);
-
+        System.out.println(BLEU + "Votre texte chiffré est : " + BLANC + texteChiffre);
+        chiffrementMenu();
     }
 
     // Méthode pour passer dans un rotator

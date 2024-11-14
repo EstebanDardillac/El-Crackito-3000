@@ -20,6 +20,12 @@ public class HashMD5 {
             System.out.println(JAUNE + "╔══════════════════════════════════════╗");
             System.out.println(JAUNE + "║" + ORANGE + "                " + GRAS + SOULIGNE + "MD5" + BLANC + "                   " + JAUNE + "║");
             System.out.println(JAUNE + "║                                      ║");
+            System.out.println(JAUNE + "║" + ORANGE + " L'algorithme MD5 est une fonction    " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + " de hachage qui convertit un message  " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + " en une empreinte unique de 128 bits, " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + " permettant de vérifier l'intégrité   " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + " d'un message ou fichier.             " + JAUNE + "║");
+            System.out.println(JAUNE + "║                                      ║");
             System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Calculer le hash MD5 d'un message " + JAUNE + "║");
             System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Comparer deux hash MD5            " + JAUNE + "║");
             System.out.println(JAUNE + "║                                      ║");

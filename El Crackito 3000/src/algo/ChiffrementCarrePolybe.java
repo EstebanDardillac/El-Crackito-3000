@@ -23,16 +23,23 @@ public class ChiffrementCarrePolybe {
 
         // Affichage du menu qui permet de choisir entre chiffrer ou déchiffrer un texte
         Scanner scanner = new Scanner(System.in);
-        System.out.println(JAUNE + "╔═════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + ORANGE + "        " + GRAS + SOULIGNE + "Carré de Polybe" + BLANC + "          " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte           " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte         " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                 ║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Aide                         " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + ITALIQUE + "Quitter                      " + JAUNE + "║");
-        System.out.println(JAUNE + "╚═════════════════════════════════╝");
+        System.out.println(JAUNE + "╔═══════════════════════════════════╗");
+        System.out.println(JAUNE + "║" + ORANGE + "          " + GRAS + SOULIGNE + "Carré de Polybe" + BLANC + "          " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                   ║");
+        System.out.println(JAUNE + "║" + ORANGE + " L'algorithme du Carré de Polybe   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + " utilise une grille de lettres où  " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + " chaque lettre est remplacée par   " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + " une paire de chiffres. Cette      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + " technique offre un chiffrement    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + " simple mais efficace du texte.    " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                   ║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer mon texte             " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer mon texte           " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                   ║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Aide                           " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + "Retour au menu principal       " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + ITALIQUE + "Quitter                        " + JAUNE + "║");
+        System.out.println(JAUNE + "╚═══════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
         // Récupération du choix de l'utilisateur
