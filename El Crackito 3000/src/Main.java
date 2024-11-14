@@ -15,7 +15,6 @@ public class Main {
      * @param args les arguments de la ligne de commande (non utilisés ici)
      */
     public static void main(String[] args) throws Exception {
-        MenuPrincipal menuPrincipal = new MenuPrincipal(); // Crée une instance de MenuPrincipal
-        menuPrincipal.afficherMenu(); // Appelle la méthode pour afficher le menu principal
+        MenuPrincipal.afficherMenu(); // Appelle la méthode pour afficher le menu principal
     }
 }
