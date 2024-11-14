@@ -16,7 +16,7 @@ public class AideMenu {
      * Cette méthode présente un message d'aide expliquant les fonctionnalités de l'application.
      * L'utilisateur peut choisir de revenir au menu principal ou de quitter l'application.
      */
-    public void afficherMenu() {
+    public static void afficherMenu() throws Exception {
         // Crée un scanner pour lire les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
 

@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import static utils.AnsiCouleurs.*;
 
-public class Viginere {
+public class Vigenere {
 
     public static void rotationMenu() throws Exception {
 
