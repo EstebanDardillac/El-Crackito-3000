@@ -67,7 +67,7 @@ public class ChiffrementRotation {
                     MenuPrincipal.afficherMenu();
                     break;
                 case 5: // Quitter le menu / l'app
-                    System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
+                    System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
                 default: // Message d'erreur pour un choix non valide

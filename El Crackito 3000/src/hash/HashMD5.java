@@ -1,7 +1,8 @@
-package algo;
+package hash;
 
 import Menus.AideMenu;
 import Menus.MenuPrincipal;
+import utils.HachageMethode;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -17,7 +18,7 @@ public class HashMD5 {
         while (true) {
             // Affiche le menu
             System.out.println(JAUNE + "╔══════════════════════════════════════╗");
-            System.out.println(JAUNE + "║" + ORANGE + "              " + GRAS + SOULIGNE + "MENU MD5" + BLANC + "                " + JAUNE + "║");
+            System.out.println(JAUNE + "║" + ORANGE + "                " + GRAS + SOULIGNE + "MD5" + BLANC + "                   " + JAUNE + "║");
             System.out.println(JAUNE + "║                                      ║");
             System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Calculer le hash MD5 d'un message " + JAUNE + "║");
             System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Comparer deux hash MD5            " + JAUNE + "║");
@@ -48,7 +49,7 @@ public class HashMD5 {
                             MenuPrincipal.afficherMenu();
                             return;
                         case 5: // Quitter le menu / l'app
-                            System.out.println(VERT + "Merci d'avoir utilisé " + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
+                            System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                             System.exit(0);
                             break;
                         default:
@@ -75,7 +76,7 @@ public class HashMD5 {
         Scanner scanner = new Scanner(System.in);
         System.out.print(BLEU + "Entrez le message pour calculer son hash MD5 : ");
         String message = scanner.nextLine();
-        String hash = calculerHashMD5(message);
+        String hash = HachageMethode.hacher(message, "MD5");;
         System.out.println(BLEU + "Hash MD5 du message : " + hash);
     }
 
@@ -86,12 +87,12 @@ public class HashMD5 {
         Scanner scanner = new Scanner(System.in);
         System.out.print(BLEU + "Entrez le premier message : ");
         String message1 = scanner.nextLine();
-        String hash1 = calculerHashMD5(message1);
+        String hash1 = HachageMethode.hacher(message1, "MD5");
         System.out.println(BLEU + "Hash MD5 du premier message : " + hash1);
 
         System.out.print(BLEU + "Entrez le deuxième message : ");
         String message2 = scanner.nextLine();
-        String hash2 = calculerHashMD5(message2);
+        String hash2 = HachageMethode.hacher(message2, "MD5");
         System.out.println(BLEU + "Hash MD5 du deuxième message : " + hash2);
 
         if (comparerHash(hash1, hash2)) {
@@ -99,28 +100,6 @@ public class HashMD5 {
         } else {
             System.out.println(BLANC + "Les messages sont différents (hashs " + ROUGE + "différents" + BLANC + ").");
         }
-    }
-
-    /**
-     * Calcule le hash MD5 d'un message donné.
-     *
-     * @param message Le message dont on souhaite calculer le hash.
-     * @return Le hash MD5 sous forme de chaîne hexadécimale.
-     * @throws NoSuchAlgorithmException Si l'algorithme MD5 n'est pas disponible.
-     */
-    public static String calculerHashMD5(String message) throws NoSuchAlgorithmException {
-        // Obtient une instance de l'algorithme MD5
-        MessageDigest md = MessageDigest.getInstance("MD5");
-        // Calcule le hash du message en tant que tableau de bytes
-        byte[] hashBytes = md.digest(message.getBytes());
-
-        // Convertit les bytes du hash en format hexadécimal pour lisibilité
-        StringBuilder hashHex = new StringBuilder();
-        for (byte b : hashBytes) {
-            hashHex.append(String.format("%02x", b));
-        }
-
-        return hashHex.toString();
     }
 
     /**
