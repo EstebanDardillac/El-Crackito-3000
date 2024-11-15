@@ -1,5 +1,6 @@
 package algo;
 
+import Menus.AideMenu;
 import Menus.MenuPrincipal;
 import java.util.Base64;
 import java.util.Scanner;
@@ -8,20 +9,27 @@ import static utils.AnsiCouleurs.*;
 public class RC4 {
 
     // Affiche le menu pour les options de chiffrement et déchiffrement avec RC4
-    public static void RC4Menu() throws Exception {
+    public static void rc4Menu() throws Exception {
         // Initialisation d'un scanner pour les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
 
         // Affichage du menu RC4
         System.out.println(JAUNE + "╔══════════════════════════════════════════════════╗");
-        System.out.println(JAUNE + "║" +ORANGE + "                      RC4                       "+ JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "                       " + GRAS + SOULIGNE + "RC4" + BLANC + "                        " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                  ║");
+        System.out.println(JAUNE + "║" + ORANGE + "  L'algorithme RC4 est un chiffrement de flux     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "  qui génère un flot de clés pseudo-aléatoires    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "  pour chaque octet du texte, combiné avec ce     " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + ORANGE + "  dernier pour produire un texte chiffré rapide.  " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                  ║");
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer un message " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déhifrer un message " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + ROUGE + "Retour au menu principal                      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrer un message                           " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Déchiffrer un message                         " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                  ║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + BLEU + ITALIQUE + "Aide                                          " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + BLEU + ITALIQUE + "Retour au menu principal                      " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + ROUGE + ITALIQUE + "Quitter                                       " + JAUNE + "║");
         System.out.println(JAUNE + "╚══════════════════════════════════════════════════╝");
+
         System.out.print(BLEU + "Choisissez une option : ");
 
         // Lecture et traitement du choix de l'utilisateur
@@ -36,16 +44,24 @@ public class RC4 {
                     System.out.println("Vous avez choisi de déchiffrer");
                     DechiffrerTexte(); // Appel de la méthode pour déchiffrer
                     break;
-                case 3:
-                    System.out.println("Vous avez choisi de retourner au menu principal");
-                    MenuPrincipal.afficherMenu(); // Retour au menu principal
+                case 3: // Accéder au menu d'aide
+                    AideMenu.afficherMenu();
                     break;
-                default:
+                case 4: // Revenir au menu principal
+                    MenuPrincipal.afficherMenu();
+                    break;
+                case 5: // Quitter le menu / l'app
+                    System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
+                    System.exit(0);
+                    break;
+                default: // Message d'erreur pour un choix non valide
                     System.out.println("Vous n'avez pas choisi une option valide");
+                    rc4Menu();
                     break;
             }
-        } else {
+        } else { // Message d'erreur pour un choix non valide
             System.out.println("Vous n'avez pas choisi une option valide");
+            rc4Menu();
         }
     }
 
@@ -126,7 +142,7 @@ public class RC4 {
         // Encodage en Base64 pour faciliter l'affichage du texte chiffré
         System.out.println("Texte chiffré (en Base64) : " + Base64.getEncoder().encodeToString(ciphertext));
 
-        RC4Menu(); // Retour au menu RC4
+        rc4Menu(); // Retour au menu RC4
     }
 
     // Méthode pour déchiffrer un texte saisi par l'utilisateur
@@ -145,7 +161,6 @@ public class RC4 {
 
         // Affiche le texte déchiffré, y compris les sauts de ligne
         System.out.println("Texte déchiffré : " + new String(decryptedText));
-        RC4Menu(); // Retour au menu RC4
+        rc4Menu(); // Retour au menu RC4
     }
-
 }

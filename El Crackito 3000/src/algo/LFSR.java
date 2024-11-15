@@ -46,14 +46,14 @@ public class LFSR {
                     System.out.println("Vous avez choisi de retourner au menu principal");
                     MenuPrincipal.afficherMenu(); // Retour au menu principal
                     break;
-                default:
-                    // Si l'utilisateur entre une option invalide
+                default: // Message d'erreur pour un choix non valide
                     System.out.println("Vous n'avez pas choisi une option valide");
+                    LFSRMenu();
                     break;
             }
-        } else {
-            // Si l'entrée n'est pas un entier, on affiche un message d'erreur
+        } else { // Message d'erreur pour un choix non valide
             System.out.println("Vous n'avez pas choisi une option valide");
+            LFSRMenu();
         }
     }
 
