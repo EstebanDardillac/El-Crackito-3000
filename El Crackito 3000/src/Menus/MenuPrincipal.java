@@ -33,11 +33,11 @@ public class MenuPrincipal {
         System.out.println("/_____/_/   \\____/_/   \\__,_/\\___/_/|_/_/\\__/\\____/   /____/\\____/\\____/\\____/  ");
         System.out.println(ORANGE + "\n✦ " + BLEU + "Menu Principal - " + GRAS + "El Crackito 3000" + ORANGE + " ✦");
         System.out.println(JAUNE + "╔══════════════════════════════════════════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Algorithme de ROT(X)             " + BLANC + " 6. " + VERT + "Générer nombre pseudo-aléa.  " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Algorithme de Vigenère           " + BLANC + " 7. " + VERT + "Hachage en MD5               " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 3. " + VERT + "Algorithme du Carré de Polybe    " + BLANC + " 8. " + VERT + "Hachage en SHA-256           " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 4. " + VERT + "Algorithme du RC4                " + BLANC + " 9. " + VERT + "Chaîne de chiffrement        " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 5. " + VERT + "Algorithme d'Enigma              " + BLANC + "10. " + VERT + "Chaîne de hachage            " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + VERT + "Chiffrement de ROT(X)            " + BLANC + " 6. " + VERT + "Générer nombre pseudo-aléa.  " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + VERT + "Chiffrement de Vigenère          " + BLANC + " 7. " + VERT + "Hachage en MD5               " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 3. " + VERT + "Chiffrement du Carré de Polybe   " + BLANC + " 8. " + VERT + "Hachage en SHA-256           " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 4. " + VERT + "Chiffrement du RC4               " + BLANC + " 9. " + VERT + "Chaîne de chiffrement        " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 5. " + VERT + "Chiffrement d'Enigma             " + BLANC + "10. " + VERT + "Chaîne de hachage            " + JAUNE + "║");
         System.out.println(JAUNE + "║                                                                      ║");
         System.out.println(JAUNE + "║" + BLANC + " 11. " + BLEU + ITALIQUE + "Aide                                                             " + JAUNE + "║");
         System.out.println(JAUNE + "║" + BLANC + " 12. " + ROUGE + ITALIQUE + "Quitter                                                          " + JAUNE + "║");
