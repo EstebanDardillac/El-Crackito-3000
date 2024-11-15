@@ -13,6 +13,7 @@ import static utils.AnsiCouleurs.*;
 public class HashMD5 {
 
     public static void md5Menu() {
+        // Crée un scanner pour lire les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
 
         while (true) {

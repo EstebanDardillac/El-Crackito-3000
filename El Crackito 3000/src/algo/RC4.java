@@ -54,12 +54,14 @@ public class RC4 {
                     System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
-                default:
+                default: // Message d'erreur pour un choix non valide
                     System.out.println("Vous n'avez pas choisi une option valide");
+                    rc4Menu();
                     break;
             }
-        } else {
+        } else { // Message d'erreur pour un choix non valide
             System.out.println("Vous n'avez pas choisi une option valide");
+            rc4Menu();
         }
     }
 

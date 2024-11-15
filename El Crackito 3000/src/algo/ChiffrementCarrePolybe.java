@@ -64,11 +64,12 @@ public class ChiffrementCarrePolybe {
                     System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
-                default:
+                default: // Message d'erreur pour un choix non valide
                     System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+                    chiffrementMenu();
                     break;
             }
-        } else {
+        } else { // Message d'erreur pour un choix non valide
             System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
             chiffrementMenu();
         }

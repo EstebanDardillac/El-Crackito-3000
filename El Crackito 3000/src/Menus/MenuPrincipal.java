@@ -87,7 +87,7 @@ public class MenuPrincipal {
                     System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
                     afficherMenu();
             }
-        } else {
+        } else { // Message d'erreur pour un choix non valide
             System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
             afficherMenu();
         }

@@ -20,6 +20,7 @@ public class HashSHA256 {
      * L'utilisateur peut saisir un message, et le programme affichera le hash SHA-256 correspondant.
      */
     public static void sha256Menu() {
+        // Crée un scanner pour lire les entrées de l'utilisateur
         Scanner scanner = new Scanner(System.in);
 
         while (true) {

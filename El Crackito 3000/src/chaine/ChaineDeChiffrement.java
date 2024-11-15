@@ -4,7 +4,6 @@ import Menus.AideMenu;
 import Menus.MenuPrincipal;
 import algo.*;
 
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -95,11 +94,11 @@ public class ChaineDeChiffrement {
                     System.out.println(VERT + "Merci d'avoir utilisé " + GRAS + CYAN_CLAIR + "El Crakito 3000 " + VERT + "!");
                     System.exit(0);
                     break;
-                default:
+                default: // Message d'erreur pour un choix non valide
                     System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
                     menuChaineDeChiffrement();
             }
-        } else {
+        } else { // Message d'erreur pour un choix non valide
             System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
             menuChaineDeChiffrement();
         }
@@ -206,7 +205,7 @@ public class ChaineDeChiffrement {
                             } catch (Exception e) {
                                 System.out.println(ROUGE + "Une erreur est survenue lors du déchiffrement avec Enigma.");
                             }
-                        } else {
+                        } else { // Si l'utilisateur saisit une option invalide, affiche un message d'erreur
                             System.out.println(ROUGE + "Option invalide. Veuillez sélectionner 1 pour chiffrer ou 2 pour déchiffrer.");
                         }
                     }
@@ -240,12 +239,10 @@ public class ChaineDeChiffrement {
                         }
                     }
                     break;
-                default:
-                    System.out.println("Algorithme non reconnu.");
+                default: // Message d'erreur pour un choix non valide
+                    System.out.println(ROUGE + "Algorithme non reconnu.");
             }
         }
-
-        System.out.println("Message final après la chaîne de chiffrement : ");
         menuChaineDeChiffrement();
     }
 }
