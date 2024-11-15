@@ -70,7 +70,7 @@ public class ChiffrementEnigma {
 
         // Demande à l'utilisateur de saisir le texte à chiffrer ou déchiffrer
         Scanner scanner = new Scanner(System.in);
-        System.out.println(BLEU + "Veuillez saisir le texte : ");
+        System.out.println(BLEU + "Veuillez saisir le texte (Vous ne pouvez écrire que des lettres et que sur une seule ligne): ");
         String texteUtilisateur = scanner.nextLine();
 
         // Vérification de la validité du texte

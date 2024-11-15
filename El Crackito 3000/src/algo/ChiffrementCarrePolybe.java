@@ -143,7 +143,7 @@ public class ChiffrementCarrePolybe {
         if(choix){
             // Chiffrement du texte
             // Demande à l'utilisateur de saisir le texte à chiffrer
-            System.out.println("Veuillez saisir le texte : ");
+            System.out.println("Veuillez saisir le texte (Vous ne pouvez écrire que des lettres et que sur une seule ligne) : ");
             String texteChoisit = scanner.nextLine();
 
             // Vérification de la validité du texte
@@ -179,7 +179,7 @@ public class ChiffrementCarrePolybe {
         }
         else {
             // Déchiffrement du texte
-            System.out.println("Veuillez saisir le texte : ");
+            System.out.println("Veuillez saisir le texte (Vous ne pouvez écrire que des lettres et que sur une seule ligne) : ");
             String texteChoisit = scanner.nextLine();
 
             // Vérification de la validité du texte : accepte les chiffres 1-5 et les espaces
