@@ -108,17 +108,13 @@ public class ChaineDeChiffrement {
     // Exécute la chaîne de chiffrement
     private static void executeChaine() throws Exception {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Entrez le message à chiffrer : ");
-        String message = scanner.nextLine();
 
         for (Algorithm algorithme : algorithmes) {
             switch (algorithme) {
                 case ROT_X:
-                    // Initialise la variable choixValide à false pour entrer dans la boucle
-                    boolean choixValide = false;
+                    boolean choixValide = false; // Initialise la variable choixValide à false pour entrer dans la boucle
 
-                    // Boucle qui se répète jusqu'à ce que l'utilisateur saisisse une option valide (1 ou 2)
-                    while (!choixValide) {
+                    while (!choixValide) { // Boucle qui se répète jusqu'à ce que l'utilisateur saisisse une option valide (1 ou 2)
                         System.out.print(BLEU + "Voulez-vous chiffrer (1) ou déchiffrer (2) le texte avec ROT(X) ? : ");
 
                         // Lecture de l'option de l'utilisateur (1 pour chiffrer, 2 pour déchiffrer)
@@ -140,28 +136,28 @@ public class ChaineDeChiffrement {
                     System.out.print("Entrez la clé pour Vigenère : ");
                     String cle = scanner.nextLine();
                     //TODO message = Vigenere
-                    System.out.println("Message après Vigenère : " + message);
+                    System.out.println("Message après Vigenère : ");
                     break;
                 case CARRE_POLYBE:
                     //TODO message = ChiffrementCarrePolybe
-                    System.out.println("Message après Carré de Polybe : " + message);
+                    System.out.println("Message après Carré de Polybe : ");
                     break;
                 case ENIGMA:
                     //TODO message = ChiffrementEnigma
-                    System.out.println("Message après Enigma : " + message);
+                    System.out.println("Message après Enigma : ");
                     break;
                 case RC4:
                     System.out.print("Entrez la clé pour RC4 : ");
                     String rc4Key = scanner.nextLine();
                     //TODO message = RC4
-                    System.out.println("Message après RC4 : " + message);
+                    System.out.println("Message après RC4 : ");
                     break;
                 default:
                     System.out.println("Algorithme non reconnu.");
             }
         }
 
-        System.out.println("Message final après la chaîne de chiffrement : " + message);
+        System.out.println("Message final après la chaîne de chiffrement : ");
         menuChaineDeChiffrement();
     }
 }
