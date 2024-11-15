@@ -89,7 +89,7 @@ public class Vigenere {
         Scanner saisieUtilisateurTexteAChiffrer = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
 
         // Demande à l'utilisateur de saisir le texte à chiffrer
-        System.out.println("Veuillez saisir le texte à chiffrer :");
+        System.out.println("Veuillez saisir le texte à chiffrer (Vous ne pouvez écrire que des lettres et que sur une seule ligne) :");
         texteAChiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
 
         // Vérifie si le texte contient des sauts de ligne, et redemande une entrée correcte si c'est le cas
@@ -103,7 +103,7 @@ public class Vigenere {
         System.out.println("Texte après normalisation : " + texteAChiffrer);
 
         // Demande à l'utilisateur de saisir la clé de chiffrement
-        System.out.println("Veuillez saisir la clé :");
+        System.out.println("Veuillez saisir la clé (Vous ne pouvez écrire que des lettres et que sur une seule ligne) :");
         cle = saisieUtilisateurCle.next();
         // Normalise la clé pour s'assurer qu'elle ne contient que des lettres minuscules
         cle = normalizeText(cle);
@@ -145,7 +145,7 @@ public class Vigenere {
         Scanner saisieUtilisateurTexteAChiffrer = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
 
         // Demande à l'utilisateur de saisir le texte à chiffrer
-        System.out.println("Veuillez saisir le texte à déchiffrer :");
+        System.out.println("Veuillez saisir le texte à déchiffrer (Vous ne pouvez écrire que des lettres et que sur une seule ligne) :");
         texteADechiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
 
         // Vérifie si le texte contient des sauts de ligne, et redemande une entrée correcte si c'est le cas
@@ -159,7 +159,7 @@ public class Vigenere {
         System.out.println("Texte après normalisation : " + texteADechiffrer);
 
         // Demande à l'utilisateur de saisir la clé de chiffrement
-        System.out.println("Veuillez saisir la clé :");
+        System.out.println("Veuillez saisir la clé (Vous ne pouvez écrire que des lettres et que sur une seule ligne) :");
         cle = saisieUtilisateurCle.next();
         // Normalise la clé pour s'assurer qu'elle ne contient que des lettres minuscules
         cle = normalizeText(cle);

@@ -117,7 +117,7 @@ public class RC4 {
 
     // Méthode pour chiffrer un texte saisi par l'utilisateur
     public static void ChiffrerTexte() throws Exception {
-        System.out.println("Veuillez saisir un texte à chiffrer (appuyez sur Entrée pour terminer) : ");
+        System.out.println("Veuillez saisir un texte à chiffrer (Il faut écrire 'FIN' pour terminer) : ");
         Scanner texte = new Scanner(System.in);
         StringBuilder inputText = new StringBuilder();
 

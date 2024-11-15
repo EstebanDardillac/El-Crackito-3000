@@ -86,7 +86,7 @@ public class ChiffrementRotation {
 
         // Demande à l'utilisateur de saisir le texte à chiffrer
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Veuillez saisir le texte : ");
+        System.out.println("Veuillez saisir le texte (Vous ne pouvez écrire que des lettres et que sur une seule ligne) : ");
         String texteAChiffrer = scanner.nextLine();
 
         // Vérification de la validité du texte
@@ -96,7 +96,7 @@ public class ChiffrementRotation {
         }
 
         // Demande à l'utilisateur de saisir la rotation
-        System.out.println("Veuillez saisir la rotation entre 0 et 26 : ");
+        System.out.println("Veuillez saisir la rotation entre 0 et 26 (Uniquement des nombres seront pris en compte) : ");
         int rot = scanner.nextInt();
 
         // Vérification de la validité de la rotation
