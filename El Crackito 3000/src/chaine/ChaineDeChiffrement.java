@@ -11,17 +11,21 @@ import java.util.Scanner;
 import static utils.AnsiCouleurs.*;
 
 public class ChaineDeChiffrement {
+    private static final List<Algorithme> algorithmes = new ArrayList<>(); // Liste des algorithmes sélectionnés pour la chaîne de chiffrement
 
-    private static final List<Algorithme> algorithmes = new ArrayList<>(); // Liste des algorithmes sélectionnés pour le chiffrement
-
+    // Enumération des algorithmes disponibles
     public enum Algorithme {
         ROT_X, VIGENERE, CARRE_POLYBE, ENIGMA, RC4
     }
 
-    // Affiche le menu pour sélectionner et exécuter la chaîne de chiffrement
+    /**
+     * Méthode principale pour afficher le menu de la chaîne de chiffrement
+     * Permet à l'utilisateur de sélectionner des algorithmes ou d'exécuter la chaîne
+     */
     public static void menuChaineDeChiffrement() throws Exception {
         Scanner scanner = new Scanner(System.in);
 
+        // Affichage du menu principal
         System.out.println(JAUNE + "╔══════════════════════════════════════════════╗");
         System.out.println(JAUNE + "║" + ORANGE + "             " + GRAS + SOULIGNE + "Chaîne de Chiffrement" + BLANC + "            " + JAUNE + "║");
         System.out.println(JAUNE + "║                                              ║");
@@ -45,11 +49,12 @@ public class ChaineDeChiffrement {
         System.out.println(JAUNE + "╚══════════════════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
-        // Vérifie si l'entrée est un entier
+        // Vérification que l'entrée soit bien un entier
         if (scanner.hasNextInt()) {
             int choix = scanner.nextInt();
             scanner.nextLine(); // Consomme la fin de ligne
 
+            // Gestion des choix utilisateur
             switch (choix) {
                 case 1: // Sélectionner ROT X
                     algorithmes.add(Algorithme.ROT_X);
@@ -99,150 +104,85 @@ public class ChaineDeChiffrement {
                     menuChaineDeChiffrement();
             }
         } else { // Message d'erreur pour un choix non valide
-            System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
+            System.out.println(ROUGE + "Entrée invalide. Veuillez saisir un entier entre 1 et 10.");
+            scanner.nextLine(); // Vide l'entrée incorrecte
             menuChaineDeChiffrement();
         }
     }
 
-    // Exécute la chaîne de chiffrement
+    /**
+     * Exécute la chaîne d'algorithmes sélectionnés par l'utilisateur.
+     * Pour chaque algorithme, l'utilisateur choisit entre chiffrement et déchiffrement,
+     * puis l'algorithme est exécuté en conséquence.
+     *
+     * @throws Exception Si une erreur survient pendant l'exécution des algorithmes.
+     */
     private static void executeChaine() throws Exception {
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // Initialise un scanner pour lire les entrées utilisateur.
 
+        // Parcours de la liste des algorithmes sélectionnés
         for (Algorithme algorithme : algorithmes) {
-            switch (algorithme) {
-                case ROT_X:
-                    boolean choixValideROTX = false; // Initialise la variable choixValide à false pour entrer dans la boucle
+            boolean choixValide = false; // Boolean pour valider le choix de l'utilisateur.
 
-                    while (!choixValideROTX) { // Boucle qui se répète jusqu'à ce que l'utilisateur saisisse une option valide (1 ou 2)
-                        System.out.print(BLEU + "Voulez-vous chiffrer (1) ou déchiffrer (2) le texte avec ROT(X) ? : ");
+            while (!choixValide) { // Demande à l'utilisateur de choisir entre chiffrement et déchiffrement pour l'algorithme courant
+                System.out.print(BLEU + "Voulez-vous chiffrer (1) ou déchiffrer (2) le texte avec " + algorithme + " ? : ");
+                if (scanner.hasNextInt()) { // Vérifie si l'entrée est un entier.
+                    int action = scanner.nextInt(); // Récupère l'entrée de l'utilisateur.
+                    scanner.nextLine(); // Consomme la fin de ligne pour éviter les erreurs de lecture.
 
-                        // Lecture de l'option de l'utilisateur (1 pour chiffrer, 2 pour déchiffrer)
-                        int operation = scanner.nextInt();
-                        scanner.nextLine(); // Consomme la fin de ligne pour éviter des erreurs de lecture
-
-                        if (operation == 1) { // Si l'utilisateur choisit l'option 1, on procède au chiffrement
-                            choixValideROTX = true; // Met fin à la boucle
-                            ChiffrementRotation.rotationAlgo(true); // Appelle la méthode de chiffrement
-                        } else if (operation == 2) { // Si l'utilisateur choisit l'option 2, on procède au déchiffrement
-                            choixValideROTX = true; // Met fin à la boucle
-                            ChiffrementRotation.rotationAlgo(false); // Appelle la méthode de déchiffrement
-                        } else { // Si l'utilisateur saisit une option invalide, un message d'erreur est affiché et la boucle continue
-                            System.out.println(ROUGE + "Option invalide. Veuillez sélectionner 1 pour chiffrer ou 2 pour déchiffrer.");
-                        }
+                    if (action == 1 || action == 2) { // Vérifie si l'action choisie est valide (1 pour chiffrer, 2 pour déchiffrer)
+                        choixValide = true; // Met fin à la boucle après une saisie valide.
+                        executeAlgorithme(algorithme, action == 1); // Exécute l'algorithme avec l'opération choisie.
+                    } else { // Message d'erreur pour un choix valide mais hors des options proposées
+                        System.out.println(ROUGE + "Option invalide. Veuillez sélectionner 1 pour chiffrer ou 2 pour déchiffrer.");
                     }
-                    break;
-                case VIGENERE:
-                    boolean choixValideVigenere = false; // Variable pour vérifier si l'utilisateur a fait un choix valide
-
-                    while (!choixValideVigenere) { // Boucle jusqu'à ce que l'utilisateur saisisse une option valide
-                        System.out.print(BLEU + "Voulez-vous chiffrer (1) ou déchiffrer (2) le tetxte avec Vigenère ? : ");
-
-                        // Lecture de l'option saisie par l'utilisateur
-                        int action = scanner.nextInt();
-                        scanner.nextLine(); // Consomme la fin de ligne pour éviter des problèmes lors de la saisie suivante
-
-                        if (action == 1) { // Si l'utilisateur choisit l'option 1, on procède au chiffrement
-                            choixValideVigenere = true; // Sort de la boucle une fois que le choix est valide
-                            Vigenere.ChiffrerVigenere(); // Appelle la méthode pour chiffrer avec Vigenère
-                        } else if (action == 2) { // Si l'utilisateur choisit l'option 2, on procède au déchiffrement
-                            choixValideVigenere = true; // Sort de la boucle une fois que le choix est valide
-                            Vigenere.DechiffrerVigenere(); // Appelle la méthode pour déchiffrer avec Vigenère
-                        } else { // Si l'utilisateur saisit une option invalide, affiche un message d'erreur
-                            System.out.println(ROUGE + "Option invalide. Veuillez sélectionner 1 pour chiffrer ou 2 pour déchiffrer.");
-                        }
-                    }
-                    break;
-                case CARRE_POLYBE:
-                    boolean choixValidePolybe = false; // Variable pour vérifier si l'utilisateur a fait un choix valide
-
-                    while (!choixValidePolybe) { // Boucle pour garantir un choix valide
-                        System.out.print(BLEU + "Voulez-vous chiffrer (1) ou déchiffrer (2) le texte avec le Carré de Polybe ? : ");
-
-                        // Lecture de l'option saisie par l'utilisateur
-                        int operationPolybe = scanner.nextInt();
-                        scanner.nextLine(); // Consomme la fin de ligne pour éviter les erreurs
-
-                        if (operationPolybe == 1) { // Si l'utilisateur choisit de chiffrer
-                            choixValidePolybe = true; // Sort de la boucle
-                            try {
-                                ChiffrementCarrePolybe.carrePolybeAlgo(true); // Appelle la méthode de chiffrement
-                            } catch (Exception e) {
-                                System.out.println(ROUGE + "Une erreur est survenue lors du chiffrement avec le Carré de Polybe.");
-                            }
-                        } else if (operationPolybe == 2) { // Si l'utilisateur choisit de déchiffrer
-                            choixValidePolybe = true; // Sort de la boucle
-                            try {
-                                ChiffrementCarrePolybe.carrePolybeAlgo(false); // Appelle la méthode de déchiffrement
-                            } catch (Exception e) {
-                                System.out.println(ROUGE + "Une erreur est survenue lors du déchiffrement avec le Carré de Polybe.");
-                            }
-                        } else { // Si l'utilisateur saisit une option invalide, affiche un message d'erreur
-                            System.out.println(ROUGE + "Option invalide. Veuillez sélectionner 1 pour chiffrer ou 2 pour déchiffrer.");
-                        }
-                    }
-                    break;
-                case ENIGMA:
-                    boolean choixValideEnigma = false; // Variable pour vérifier si l'utilisateur a fait un choix valide
-
-                    while (!choixValideEnigma) { // Boucle pour garantir un choix valide
-                        System.out.print(BLEU + "Voulez-vous chiffrer (1) ou déchiffrer (2) le texte avec Enigma ? : ");
-
-                        // Lecture de l'option saisie par l'utilisateur
-                        int operationEnigma = scanner.nextInt();
-                        scanner.nextLine(); // Consomme la fin de ligne pour éviter les erreurs
-
-                        if (operationEnigma == 1) { // Si l'utilisateur choisit de chiffrer
-                            choixValideEnigma = true; // Sort de la boucle
-                            try {
-                                ChiffrementEnigma.enigmaAlgo(true); // Appelle la méthode de chiffrement
-                            } catch (Exception e) {
-                                System.out.println(ROUGE + "Une erreur est survenue lors du chiffrement avec Enigma.");
-                            }
-                        } else if (operationEnigma == 2) { // Si l'utilisateur choisit de déchiffrer
-                            choixValideEnigma = true; // Sort de la boucle
-                            try {
-                                ChiffrementEnigma.enigmaAlgo(false); // Appelle la méthode de déchiffrement
-                            } catch (Exception e) {
-                                System.out.println(ROUGE + "Une erreur est survenue lors du déchiffrement avec Enigma.");
-                            }
-                        } else { // Si l'utilisateur saisit une option invalide, affiche un message d'erreur
-                            System.out.println(ROUGE + "Option invalide. Veuillez sélectionner 1 pour chiffrer ou 2 pour déchiffrer.");
-                        }
-                    }
-                    break;
-                case RC4:
-                    boolean choixValideRC4 = false; // Variable pour vérifier si l'utilisateur a fait un choix valide
-
-                    while (!choixValideRC4) { // Boucle pour garantir un choix valide
-                        System.out.print(BLEU + "Voulez-vous chiffrer (1) ou déchiffrer (2) le texte avec RC4 ? : ");
-
-                        // Lecture de l'option saisie par l'utilisateur
-                        int operationRC4 = scanner.nextInt();
-                        scanner.nextLine(); // Consomme la fin de ligne pour éviter les erreurs
-
-                        if (operationRC4 == 1) { // Si l'utilisateur choisit de chiffrer
-                            choixValideRC4 = true; // Sort de la boucle
-                            try {
-                                RC4.ChiffrerTexte(); // Appelle la méthode de chiffrement
-                            } catch (Exception e) {
-                                System.out.println(ROUGE + "Une erreur est survenue lors du chiffrement avec RC4.");
-                            }
-                        } else if (operationRC4 == 2) { // Si l'utilisateur choisit de déchiffrer
-                            choixValideRC4 = true; // Sort de la boucle
-                            try {
-                                RC4.DechiffrerTexte(); // Appelle la méthode de déchiffrement
-                            } catch (Exception e) {
-                                System.out.println(ROUGE + "Une erreur est survenue lors du déchiffrement avec RC4.");
-                            }
-                        } else { // Si l'utilisateur saisit une option invalide, affiche un message d'erreur
-                            System.out.println(ROUGE + "Option invalide. Veuillez sélectionner 1 pour chiffrer ou 2 pour déchiffrer.");
-                        }
-                    }
-                    break;
-                default: // Message d'erreur pour un choix non valide
-                    System.out.println(ROUGE + "Algorithme non reconnu.");
+                } else { // Message d'erreur pour une entrée invalide (non entière).
+                    System.out.println(ROUGE + "Entrée invalide. Veuillez saisir un entier (1 ou 2).");
+                    scanner.nextLine(); // Vide l'entrée incorrecte pour éviter des boucles infinies.
+                }
             }
         }
+
+        // Retourne au menu principal de la chaîne après avoir exécuté tous les algorithmes.
         menuChaineDeChiffrement();
+    }
+
+    /**
+     * Exécute un algorithme de chiffrement ou de déchiffrement en fonction de l'algorithme choisi
+     * et de l'opération demandée (chiffrement ou déchiffrement).
+     *
+     * @param algorithme L'algorithme sélectionné (ROT_X, VIGENERE, etc.).
+     * @param chiffrer   Indique si l'opération est un chiffrement (true) ou un déchiffrement (false).
+     * @throws Exception Si une erreur survient pendant l'exécution de l'algorithme.
+     */
+    private static void executeAlgorithme(Algorithme algorithme, boolean chiffrer) throws Exception {
+        // Vérifie quel algorithme est sélectionné et exécute la méthode appropriée.
+        switch (algorithme) {
+            case ROT_X: // Exécute le chiffrement ou le déchiffrement avec l'algorithme ROT(X).
+                ChiffrementRotation.rotationAlgo(chiffrer);
+                break;
+            case VIGENERE: // Exécute le chiffrement ou le déchiffrement avec l'algorithme de Vigenère.
+                if (chiffrer) {
+                    Vigenere.ChiffrerVigenere(); // Appelle la méthode pour chiffrer.
+                } else {
+                    Vigenere.DechiffrerVigenere(); // Appelle la méthode pour déchiffrer.
+                }
+                break;
+            case CARRE_POLYBE: // Exécute le chiffrement ou le déchiffrement avec le Carré de Polybe.
+                ChiffrementCarrePolybe.carrePolybeAlgo(chiffrer);
+                break;
+            case ENIGMA: // Exécute le chiffrement ou le déchiffrement avec l'algorithme Enigma.
+                ChiffrementEnigma.enigmaAlgo(chiffrer);
+                break;
+            case RC4: // Exécute le chiffrement ou le déchiffrement avec l'algorithme RC4.
+                if (chiffrer) {
+                    RC4.ChiffrerTexte(); // Appelle la méthode pour chiffrer.
+                } else {
+                    RC4.DechiffrerTexte(); // Appelle la méthode pour déchiffrer.
+                }
+                break;
+            default: // Ce cas ne devrait pas se produire, car les algorithmes sont prédéfinis.
+                throw new IllegalArgumentException(ROUGE + "Algorithme inconnu : " + algorithme);
+        }
     }
 }
