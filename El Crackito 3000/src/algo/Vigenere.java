@@ -12,7 +12,7 @@ import static utils.AnsiCouleurs.*;
 
 public class Vigenere {
 
-    public static void rotationMenu() throws Exception {
+    public static void vigenereMenu() throws Exception {
 
         // Affichage du menu
         Scanner scanner = new Scanner(System.in);
@@ -62,12 +62,12 @@ public class Vigenere {
                     break;
                 default: // Message d'erreur pour un choix non valide
                     System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
-                    rotationMenu();
+                    vigenereMenu();
                     break;
             }
         } else {
             System.out.println(ROUGE + "Option invalide. Veuillez réessayer.");
-            rotationMenu();
+            vigenereMenu();
         }
     }
   
@@ -89,13 +89,13 @@ public class Vigenere {
         Scanner saisieUtilisateurTexteAChiffrer = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
 
         // Demande à l'utilisateur de saisir le texte à chiffrer
-        System.out.println("Veuillez saisir le texte à chiffrer :");
+        System.out.println("Veuillez saisir le texte à chiffrer (Vous ne pouvez écrire que des lettres et que sur une seule ligne) :");
         texteAChiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
 
         // Vérifie si le texte contient des sauts de ligne, et redemande une entrée correcte si c'est le cas
         while (texteAChiffrer.contains("\n") || texteAChiffrer.isEmpty())  {
             System.out.println("\nCe mode de chiffrement ne prend pas en compte les sauts de lignes.");
-            rotationMenu();
+            vigenereMenu();
         }
 
         // Normalise le texte pour le préparer au chiffrement (sans accents ni caractères spéciaux)
@@ -103,7 +103,7 @@ public class Vigenere {
         System.out.println("Texte après normalisation : " + texteAChiffrer);
 
         // Demande à l'utilisateur de saisir la clé de chiffrement
-        System.out.println("Veuillez saisir la clé :");
+        System.out.println("Veuillez saisir la clé (Vous ne pouvez écrire que des lettres et que sur une seule ligne) :");
         cle = saisieUtilisateurCle.next();
         // Normalise la clé pour s'assurer qu'elle ne contient que des lettres minuscules
         cle = normalizeText(cle);
@@ -135,7 +135,7 @@ public class Vigenere {
         }
         // Affiche le texte chiffré
         System.out.println("Texte chiffré : " + texteADechiffrer);
-        rotationMenu();
+        vigenereMenu();
     }
 
     public static void DechiffrerVigenere() throws Exception {
@@ -145,13 +145,13 @@ public class Vigenere {
         Scanner saisieUtilisateurTexteAChiffrer = new Scanner(System.in); // Objet Scanner pour obtenir les entrées de l'utilisateur
 
         // Demande à l'utilisateur de saisir le texte à chiffrer
-        System.out.println("Veuillez saisir le texte à déchiffrer :");
+        System.out.println("Veuillez saisir le texte à déchiffrer (Vous ne pouvez écrire que des lettres et que sur une seule ligne):");
         texteADechiffrer = saisieUtilisateurTexteAChiffrer.nextLine();
 
         // Vérifie si le texte contient des sauts de ligne, et redemande une entrée correcte si c'est le cas
         while (texteADechiffrer.contains("\n") || texteADechiffrer.isEmpty())  {
             System.out.println("\nCe mode de chiffrement ne prend pas en compte les sauts de lignes.");
-            rotationMenu();
+            vigenereMenu();
         }
 
         // Normalise le texte pour le préparer au chiffrement (sans accents ni caractères spéciaux)
@@ -159,7 +159,7 @@ public class Vigenere {
         System.out.println("Texte après normalisation : " + texteADechiffrer);
 
         // Demande à l'utilisateur de saisir la clé de chiffrement
-        System.out.println("Veuillez saisir la clé :");
+        System.out.println("Veuillez saisir la clé (Vous ne pouvez écrire que des lettres et que sur une seule ligne) :");
         cle = saisieUtilisateurCle.next();
         // Normalise la clé pour s'assurer qu'elle ne contient que des lettres minuscules
         cle = normalizeText(cle);
@@ -192,6 +192,6 @@ public class Vigenere {
         // Affiche le texte déchiffré pour vérifier que le déchiffrement fonctionne
         System.out.println("Texte déchiffré : " + texteDechiffre);
 
-        rotationMenu();
+        vigenereMenu();
     }
 }

@@ -101,7 +101,7 @@ public class RC4 {
 
     // Méthode pour chiffrer un texte saisi par l'utilisateur
     public static void ChiffrerTexte() throws Exception {
-        System.out.println("Veuillez saisir un texte à chiffrer (appuyez sur Entrée pour terminer) : ");
+        System.out.println("Veuillez saisir un texte à chiffrer (Écrire 'FIN' pour terminer) : ");
         Scanner texte = new Scanner(System.in);
         StringBuilder inputText = new StringBuilder();
 
@@ -124,14 +124,14 @@ public class RC4 {
         byte[] ciphertext = rc4Encrypt.encrypt(plaintext);
 
         // Encodage en Base64 pour faciliter l'affichage du texte chiffré
-        System.out.println("Texte chiffré (en Base64) : " + Base64.getEncoder().encodeToString(ciphertext));
+        System.out.println("Texte chiffré : " + Base64.getEncoder().encodeToString(ciphertext));
 
         RC4Menu(); // Retour au menu RC4
     }
 
     // Méthode pour déchiffrer un texte saisi par l'utilisateur
     public static void DechiffrerTexte() throws Exception {
-        System.out.println("Veuillez saisir un texte à déchiffrer (Base64) : ");
+        System.out.println("Veuillez saisir un texte à déchiffrer : ");
         Scanner texte = new Scanner(System.in);
         String base64Ciphertext = texte.nextLine(); // Lecture du texte chiffré en Base64
         byte[] ciphertext = Base64.getDecoder().decode(base64Ciphertext); // Décodage du texte Base64 en tableau d'octets
