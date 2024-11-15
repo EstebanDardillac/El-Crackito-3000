@@ -79,7 +79,7 @@ public class HashMD5 {
     /**
      * Calcule le hash MD5 d'un message saisi par l'utilisateur.
      */
-    private static void calculerHashMessage() throws NoSuchAlgorithmException {
+    public static void calculerHashMessage() throws NoSuchAlgorithmException {
         Scanner scanner = new Scanner(System.in);
         System.out.print(BLEU + "Entrez le message pour calculer son hash MD5 : ");
         String message = scanner.nextLine();
@@ -90,7 +90,7 @@ public class HashMD5 {
     /**
      * Compare les hash MD5 de deux messages saisis par l'utilisateur.
      */
-    private static void comparerHashMessages() throws NoSuchAlgorithmException {
+    public static void comparerHashMessages() throws NoSuchAlgorithmException {
         Scanner scanner = new Scanner(System.in);
         System.out.print(BLEU + "Entrez le premier message : ");
         String message1 = scanner.nextLine();

@@ -82,7 +82,7 @@ public class HashSHA256 {
     /**
      * Permet à l'utilisateur de saisir un message et affiche son hash SHA-256.
      */
-    private static void calculerHashMessageSHA256() throws NoSuchAlgorithmException {
+    public static void calculerHashMessageSHA256() throws NoSuchAlgorithmException {
         Scanner scanner = new Scanner(System.in);
         System.out.print(BLEU + "Entrez le message pour calculer son hash SHA-256 : ");
         String message = scanner.nextLine();
