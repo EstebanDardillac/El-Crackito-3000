@@ -21,26 +21,53 @@ public class AideMenu {
         Scanner scanner = new Scanner(System.in);
 
         // Affiche le message d'aide
-        System.out.println(JAUNE + "╔══════════════════════════════════════════════════════════════════════════════╗");
-        System.out.println(JAUNE + "║" + BLEU + "    Bienvenue dans le menu d'aide d'" + GRAS + CYAN_CLAIR + "El Crackito 3000 " + BLEU + "!                        " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    Ce programme propose plusieurs algorithmes de cryptage,                   " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    notamment les algorithmes de Rotation (Rot(X)) et de Vigenère.            " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    Utilisez ces outils pour en apprendre davantage sur le chiffrement.       " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                                                              ║");
-        System.out.println(JAUNE + "║" + VERT + "    Options disponibles :                                                     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de Rotation (Rot(X)) : Un chiffrement simple qui déplace les " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "      lettres d'un certain nombre de positions.                               " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    - Algorithme de Vigenère : Un chiffrement qui utilise un mot-clé pour     " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "      encoder le texte.                                                       " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                                                              ║");
-        System.out.println(JAUNE + "║" + BLANC + "    Si vous avez des questions, consultez la documentation ou contactez le    " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + "    support. Merci d'utiliser " + GRAS + CYAN_CLAIR + "El Crackito 3000 " + BLANC + "!                              " + JAUNE + "║");
-        System.out.println(JAUNE + "║                                                                              ║");
+        System.out.println(JAUNE + "╔═══════════════════════════════════════════════════════════════════════════════╗");
+        System.out.println(JAUNE + "║" + BLEU + "    Bienvenue dans le menu d'aide d'" + GRAS + CYAN_CLAIR + "El Crackito 3000  " + BLEU + "!                        " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    Ce programme propose plusieurs algorithmes de cryptage,                    " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    notamment les algorithmes de Rotation (Rot(X)) et de Vigenère.             " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + "    Utilisez ces outils pour en apprendre davantage sur le chiffrement.        " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                                                               ║");
+        System.out.println(JAUNE + "║" + VERT + "    Options disponibles :                                                      " + JAUNE + "║");
+        System.out.println(JAUNE + "║    " + BLANC + GRAS + "Algorithmes :                                                              " + JAUNE + "║");
+        System.out.println(JAUNE + "║    " + BLANC + SOULIGNE + "- Chiffrement de Rotation (Rot(X)) :" + BLANC + " Le chiffrement par rotation déplace   " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "chaque lettre d'un certain nombre de positions, défini par Rot(X),       " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "dans l'alphabet pour produire un texte chiffré.                          " + JAUNE + "║");
+        System.out.println(JAUNE + "║    " + BLANC + SOULIGNE +"- Chiffrement de Vigenère :" + BLANC + " Le chiffrement de Vigenère utilise un mot-clé  " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "pour chiffrer le texte en décalant chaque lettre en fonction des         " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "lettres du mot-clé. Ce système rend le chiffrement plus difficile à      " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "casser que les substitutions simples.                                    " + JAUNE + "║");
+
+        System.out.println(JAUNE + "║    " + BLANC + SOULIGNE +"- Le carée de Polybe : " + BLANC + "L'algorithme du Carré de Polybe utilise une         " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "grille de lettres où chaque lettre est remplacée par une paire de        " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "chiffres. Cette technique offre un chiffrement simple mais efficace      " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "du texte.                                                                " + JAUNE + "║");
+        System.out.println(JAUNE + "║    " + BLANC + SOULIGNE +"- LFSR : " + BLANC + "Un générateur de séquence pseudo-aléatoire utilisé en             " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "cryptographie.                                                           " + JAUNE + "║");
+
+        System.out.println(JAUNE + "║    " + BLANC + SOULIGNE + "- Chiffrement RC4 :" + BLANC + " L'algorithme RC4 est un chiffrement de flux qui        " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "génère un flot de clés pseudo-aléatoires pour chaque octet du texte,     " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "combiné avec ce dernier pour produire un texte chiffré rapide.           " + JAUNE + "║");
+
+        System.out.println(JAUNE + "║    " + BLANC +  SOULIGNE + "- Chiffrement Enigma :" + BLANC + " L'algorithme Enigma utilise des rotors pour         " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "substituer chaque lettre, inversant le message via un miroir et          " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "revenant par les rotors pour un chiffrement complexe du texte.           " + JAUNE + "║");
+
+        System.out.println(JAUNE + "║    " + BLANC + GRAS + "Hashages :                                                                 " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + SOULIGNE + "- Hashage MD5 : " + BLANC + "L'algorithme MD5 est une fonction de hachage qui           " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "convertit un message en une empreinte unique de 128 bits, permettant     " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "de vérifier l'intégrité d'un message ou fichier.                         " + JAUNE + "║");
+
+        System.out.println(JAUNE + "║      " + BLANC + SOULIGNE + "- Hashage SHA-256 : " + BLANC + "L'algorithme SHA-256 génère une empreinte unique de    " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "256 bits à partir d'un message, offrant une vérification fiable de       " + JAUNE + "║");
+        System.out.println(JAUNE + "║      " + BLANC + "son intégrité avec un haut niveau de sécurité.                           " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                                                               ║");
+        System.out.println(JAUNE + "║" + GRAS + CYAN_CLAIR + "El Crackito 3000!                                                              " + JAUNE + "║");
+        System.out.println(JAUNE + "║                                                                               ║");
 
         // Affiche les options de navigation
-        System.out.println(JAUNE + "║" + BLANC + " 1. " + BLEU + ITALIQUE + "Revenir au menu principal                                                 " + JAUNE + "║");
-        System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + ITALIQUE + "Quitter                                                                   " + JAUNE + "║");
-        System.out.println(JAUNE + "╚══════════════════════════════════════════════════════════════════════════════╝");
+        System.out.println(JAUNE + "║" + BLANC + " 1. " + BLEU + ITALIQUE + "Revenir au menu principal                                                  " + JAUNE + "║");
+        System.out.println(JAUNE + "║" + BLANC + " 2. " + ROUGE + ITALIQUE + "Quitter                                                                    " + JAUNE + "║");
+        System.out.println(JAUNE + "╚═══════════════════════════════════════════════════════════════════════════════╝");
         System.out.print(BLEU + "Choisissez une option : ");
 
         if (scanner.hasNextInt()) { // Vérifie si la prochaine entrée de l'utilisateur est un entier
